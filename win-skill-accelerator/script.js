@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const toast = document.createElement('div');
         toast.className = `toast toast-${type}`;
-        
+
         let iconSvg = '';
         if (type === 'success') {
             iconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>';
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fullAccessBtn = document.getElementById('fullAccessBtn');
 
     let currentFullPrice = 1499;
-    
+
     // Elements to update
     const displayFullPrice = document.getElementById('displayFullPrice');
     const summaryCouponValue = document.getElementById('summaryCouponValue');
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         buttonElement.style.opacity = '0.7';
         buttonElement.style.cursor = 'wait';
         buttonElement.innerHTML = '<span class="btn-main-text">Processing...</span><span class="btn-subtext">Securely connecting to PhonePe</span>';
-        
+
         showToast('Initiating secure payment...', 'info');
 
         const requestData = {
@@ -103,8 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Payment Error:', error);
             // Display the exact error message in the toast to help us debug
-            showToast('Error connecting to payment gateway. Please try again later.', 'error');
-            
+            showToast('Error: ' + error.message, 'error');
+
             // Revert button state on error
             buttonElement.disabled = false;
             buttonElement.style.opacity = '1';
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle form submission (Advance Booking)
     registrationForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         if (validateForm()) {
             processPayment(449, bookSeatBtn);
         }
@@ -159,36 +159,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle coupon application
     applyCouponBtn.addEventListener('click', () => {
         const couponInput = document.getElementById('coupon').value.trim().toLowerCase();
-        
+
         if (couponInput === 'wsa500') {
             // Apply discount
             currentFullPrice = 999;
-            
+
             // Update UI
             displayFullPrice.innerHTML = '<span style="text-decoration: line-through; font-size: 1rem; color: var(--text-light); margin-right: 0.5rem;">₹1,499</span>₹999';
             summaryCouponValue.textContent = 'WSA500 Applied (-₹500)';
             summaryCouponValue.style.color = 'var(--green)';
-            
+
             summaryTotalRow.style.display = 'flex';
             summaryTotalValue.textContent = '₹999';
-            
+
             btnFullPriceSubtext.textContent = '₹999 Full Payment';
-            
+
             showToast('Coupon "WSA500" applied successfully! Full price reduced to ₹999.', 'success');
         } else {
             // Revert to original price if coupon is invalid or empty
             currentFullPrice = 1499;
-            
+
             // Revert UI
             displayFullPrice.textContent = '₹1,499';
             summaryCouponValue.textContent = 'None';
             summaryCouponValue.style.color = 'var(--text-dark)';
-            
+
             summaryTotalRow.style.display = 'none';
             summaryTotalValue.textContent = '₹1,499';
-            
+
             btnFullPriceSubtext.textContent = '₹1,499 Full Payment';
-            
+
             if (couponInput !== '') {
                 showToast('Invalid coupon code. Price reverted to ₹1,499.', 'error');
             } else {
