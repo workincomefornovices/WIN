@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - WIN Skill Accelerator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .status-container {
+            grid-template-columns: 1fr;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .status-card {
+            text-align: center;
+            padding: 4rem 3rem;
+        }
+        .status-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #EEF2FF;
+            color: var(--green);
+            margin-bottom: 2rem;
+        }
+        .status-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+        .status-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        .status-message {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+        .btn-home {
+            background: var(--text-dark);
+            color: var(--white);
+            max-width: 250px;
+            margin: 0 auto;
+            flex-direction: row;
+            padding: 1rem 2rem;
+        }
+        .btn-home:hover {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="accelerator-container status-container">
+        <section class="form-section" style="width: 100%;">
+            <div class="form-card status-card">
+                
+                <div class="status-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+
+                <h1 class="status-title">Payment Successful!</h1>
+                
+                <p class="status-message">
+                    Your seat for the WIN <span class="cursive-text" style="font-size: 1.1em;">Skill</span> Accelerator has been successfully confirmed. 
+                    We have received your details and will contact you shortly with your onboarding information!
+                </p>
+
+                <div class="action-buttons">
+                    <a href="../../index.html" style="text-decoration: none; width: 100%;">
+                        <button type="button" class="btn-home">
+                            <span class="btn-main-text">Return to Home</span>
+                        </button>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

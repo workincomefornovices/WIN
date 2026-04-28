@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Failed - WIN Skill Accelerator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .status-container {
+            grid-template-columns: 1fr;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .status-card {
+            text-align: center;
+            padding: 4rem 3rem;
+        }
+        .status-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #FEF2F2;
+            color: var(--red);
+            margin-bottom: 2rem;
+        }
+        .status-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+        .status-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        .status-message {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+        .btn-retry {
+            background: var(--text-dark);
+            color: var(--white);
+            max-width: 250px;
+            margin: 0 auto;
+            flex-direction: row;
+            padding: 1rem 2rem;
+        }
+        .btn-retry:hover {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="accelerator-container status-container">
+        <section class="form-section" style="width: 100%;">
+            <div class="form-card status-card">
+                
+                <div class="status-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                    </svg>
+                </div>
+
+                <h1 class="status-title">Payment Failed</h1>
+                
+                <p class="status-message">
+                    Oops! Something went wrong with your transaction and your seat could not be booked. 
+                    Please try again or use a different payment method.
+                </p>
+
+                <div class="action-buttons">
+                    <a href="../index.html" style="text-decoration: none; width: 100%;">
+                        <button type="button" class="btn-retry">
+                            <span class="btn-main-text">Try Again</span>
+                        </button>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

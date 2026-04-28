@@ -57,8 +57,61 @@ document.addEventListener('DOMContentLoaded', () => {
     const summaryTotalRow = document.getElementById('summaryTotalRow');
     const summaryTotalValue = document.getElementById('summaryTotalValue');
     const btnFullPriceSubtext = document.getElementById('btnFullPriceSubtext');
-
     const agreeTerms = document.getElementById('agreeTerms');
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzUw9pewzIkg46RFErBTSvKkp_9v3mXuiViLNTEhlCar1iB7RSOGo6WhAcAn-F7SWxQoA/exec';
+
+    async function processPayment(amount, buttonElement) {
+        // Show loading state
+        const originalText = buttonElement.innerHTML;
+        buttonElement.disabled = true;
+        buttonElement.style.opacity = '0.7';
+        buttonElement.style.cursor = 'wait';
+        buttonElement.innerHTML = '<span class="btn-main-text">Processing...</span><span class="btn-subtext">Securely connecting to PhonePe</span>';
+        
+        showToast('Initiating secure payment...', 'info');
+
+        const requestData = {
+            name: document.getElementById('fullName').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            city: document.getElementById('city').value,
+            state: document.getElementById('state').value,
+            coupon: document.getElementById('coupon').value,
+            amount: amount
+        };
+
+        try {
+            // Send data to Google Apps Script (Serverless Backend)
+            const response = await fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8',
+                },
+                body: JSON.stringify(requestData)
+            });
+
+            const result = await response.json();
+
+            if (result.status === 'success' && result.paymentUrl) {
+                showToast('Redirecting to PhonePe Gateway...', 'success');
+                // Redirect user to the PhonePe payment page
+                window.location.href = result.paymentUrl;
+            } else {
+                throw new Error(result.message || 'Payment initialization failed.');
+            }
+
+        } catch (error) {
+            console.error('Payment Error:', error);
+            // Display the exact error message in the toast to help us debug
+            showToast('Error: ' + error.message, 'error');
+            
+            // Revert button state on error
+            buttonElement.disabled = false;
+            buttonElement.style.opacity = '1';
+            buttonElement.style.cursor = 'pointer';
+            buttonElement.innerHTML = originalText;
+        }
+    }
 
     // Custom form validation logic
     function validateForm() {
@@ -68,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (!registrationForm.checkValidity()) {
-            // Find the first invalid element to give a more specific message
             const elements = registrationForm.elements;
             for (let i = 0; i < elements.length; i++) {
                 if (!elements[i].validity.valid) {
@@ -77,10 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else if (elements[i].id === 'phone' && elements[i].value) {
                         showToast('Please enter a valid 10-digit mobile number.', 'error');
                     } else {
-                        // For generic required fields that are empty
                         showToast('Please fill out all required fields marked with an asterisk (*).', 'error');
                     }
-                    // Optional: highlight or focus the invalid field
                     elements[i].focus();
                     return false;
                 }
@@ -95,16 +145,14 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         
         if (validateForm()) {
-            console.log('Form is valid. Proceeding to payment...');
-            showToast('Proceeding to Razorpay checkout for ₹449 Advance Booking...', 'info');
+            processPayment(449, bookSeatBtn);
         }
     });
 
     // Handle full access button click
     fullAccessBtn.addEventListener('click', () => {
         if (validateForm()) {
-            console.log('Proceeding with full access payment...');
-            showToast(`Proceeding to Razorpay checkout for ₹${currentFullPrice} Full Payment...`, 'info');
+            processPayment(currentFullPrice, fullAccessBtn);
         }
     });
 
