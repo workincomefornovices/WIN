@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us — WIN Digital Agency</title>
+    <meta name="description"
+        content="Get in touch with WIN — let's discuss how we can help grow your digital presence." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/navbar.css" />
+    <link rel="stylesheet" href="../styles/contact.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+</head>
+
+<body class="page-contact">
+    <div id="cursor-ring" aria-hidden="true"></div>
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar__inner">
+            <div class="navbar__brand">
+                <a href="../home/" class="navbar__logo" aria-label="WIN Home" style="display: flex; align-items: center; gap: 12px; pointer-events: auto;">
+            <img src="../src-images/common-images/win-logo.png" alt="WIN Logo" style="height: 48px; width: auto; aspect-ratio: auto; margin-right: -4px;">
+            <img src="../src-images/common-images/win-name.png" alt="WIN Wordmark" style="height: 22px; width: auto; aspect-ratio: auto;">
+          </a>
+            </div>
+            <div class="navbar__menu">
+                <ul class="navbar__links" id="navLinks" role="list">
+                    <li><a href="../home/" class="nav-link">Home</a></li>
+                    <li><a href="../about/" class="nav-link">About</a></li>
+                    <li><a href="../services/" class="nav-link">Services</a></li>
+                    <li><a href="../testimonials/" class="nav-link">Testimonials</a></li>
+                    <li><a href="../contact/" class="nav-link active" aria-current="page">Contact</a></li>
+                    <li class="navbar__drawer-cta-wrap">
+                        <a href="../contact/" class="navbar__drawer-cta">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar__actions">
+                <a href="../contact/" class="navbar__cta" id="navCta">Get Started</a>
+                <button class="navbar__hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="page-transition" aria-hidden="true">
+        <div class="pt-panel pt-panel--1"></div>
+        <div class="pt-panel pt-panel--2"></div>
+        <div class="pt-panel pt-panel--3"></div>
+    </div>
+
+    <!-- CONTACT HERO -->
+    <section class="contact-hero" id="contactHero">
+        <!-- LAYER 0: WebGL Cybernetic Grid background -->
+        <div id="cyberneticGridMount" aria-hidden="true"></div>
+
+        <div class="container hero-split-layout">
+            <!-- LEFT: Text Content -->
+            <div class="hero-content-left">
+                <div class="eyebrow-wrap">
+                    <span class="eyebrow-line"></span>
+                    <p class="section-label">LET'S CONNECT</p>
+                </div>
+
+                <h1 class="hero-main-title">
+                    <span class="text-dark">Start Your</span><br>
+                    <span class="text-blue">Project<span class="dot">.</span></span>
+                </h1>
+
+                <p class="hero-description">
+                    Tell us about your vision. We respond within 24 hours<br>
+                    with a tailored proposal crafted for your goals.
+                </p>
+
+                <div class="hero-badges-row">
+                    <div class="badge-pill glass-frost"><span>⚡</span> 24h Response</div>
+                    <div class="badge-pill glass-frost"><span>🎯</span> Tailored Proposals</div>
+                    <div class="badge-pill glass-frost"><span>🌏</span> Remote Worldwide</div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Glass Orb Visual -->
+            <div class="hero-visual-right">
+                <div class="spatial-orb-wrap">
+                    <div class="floating-label label-top">CREATIVE STUDIO</div>
+                    <div class="floating-label label-right">DIGITAL GROWTH</div>
+                    <div class="floating-label label-bottom">INDIA · GLOBAL</div>
+
+                    <div class="orb-ring orb-ring-outer"></div>
+                    <div class="orb-ring orb-ring-mid"></div>
+
+                    <div class="main-glass-orb">
+                        <span class="orb-logo-text">WIN</span>
+                        <div class="orb-inner-glow"></div>
+                    </div>
+
+                    <div class="orb-particle p-small pos-top-right"></div>
+                    <div class="orb-particle p-medium pos-bottom-left"></div>
+                    <div class="orb-particle p-tiny pos-mid-left"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll-cue" aria-hidden="true">
+            <span>SCROLL</span>
+            <div class="scroll-bar"></div>
+        </div>
+    </section>
+
+    <!-- CONTACT BODY -->
+    <section class="contact-body">
+        <div class="container">
+            <div class="contact-layout">
+
+                <!-- LEFT: Info -->
+                <div class="contact-info">
+                    <h2>Start the<br /><em>Conversation</em></h2>
+                    <p class="contact-info__sub">Whether you have a project in mind or just want to explore
+                        possibilities, we'd love to hear from you.</p>
+                    <div class="contact-details">
+                        <div class="contact-detail-item glass-card" id="cdetail1">
+                            <span class="cdi-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22"
+                                    height="22">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.5 10.72 19.79 19.79 0 01.46 4.1 2 2 0 012.44 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.08 6.08l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                                </svg>
+                            </span>
+                            <div>
+                                <p class="cdi-label">Phone</p>
+                                <a href="tel:+917032234827" class="cdi-value" style="text-decoration: none; color: inherit;">+91 70322 34827</a>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item glass-card" id="cdetail2">
+                            <span class="cdi-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22"
+                                    height="22">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </span>
+                            <div>
+                                <p class="cdi-label">Email</p>
+                                <p class="cdi-value">contact@workincomefornovices.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item glass-card" id="cdetail3">
+                            <span class="cdi-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22"
+                                    height="22">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </span>
+                            <div>
+                                <p class="cdi-label">Location</p>
+                                <p class="cdi-value">NTR Nagar, Hyderabad, Telangana</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item glass-card" id="cdetail4">
+                            <span class="cdi-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22"
+                                    height="22">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </span>
+                            <div>
+                                <p class="cdi-label">Response Time</p>
+                                <p class="cdi-value">Within 24 Hours</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="#" class="social-pill glass-card" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                                <path
+                                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="#" class="social-pill glass-card" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"
+                                height="18">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="5" />
+                                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+                            </svg>
+                            Instagram
+                        </a>
+                        <a href="#" class="social-pill glass-card" aria-label="Twitter/X">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                            Twitter
+                        </a>
+                        <a href="#" class="social-pill glass-card" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                                <path
+                                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1V12h3l-.5 3H13v6.8c4.56-.93 8-4.96 8-9.8z" />
+                            </svg>
+                            Facebook
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Neumorphic Form -->
+                <div class="contact-form-wrapper">
+                    <form class="contact-form glass-card" id="contactForm" novalidate aria-label="Contact form">
+                        <div class="form-header">
+                            <h3>Send a Message</h3>
+                            <p>Fill in the details below and we'll get back to you ASAP.</p>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <div class="neo-input-wrapper">
+                                    <input type="text" id="firstName" name="firstName" class="neo-input"
+                                        placeholder="Your first name" required autocomplete="given-name" />
+                                    <span class="input-focus-line" aria-hidden="true"></span>
+                                </div>
+                                <span class="form-error" id="firstNameErr" role="alert"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <div class="neo-input-wrapper">
+                                    <input type="text" id="lastName" name="lastName" class="neo-input"
+                                        placeholder="Your last name" required autocomplete="family-name" />
+                                    <span class="input-focus-line" aria-hidden="true"></span>
+                                </div>
+                                <span class="form-error" id="lastNameErr" role="alert"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <div class="neo-input-wrapper">
+                                <input type="email" id="email" name="email" class="neo-input"
+                                    placeholder="hello@yourcompany.com" required autocomplete="email" />
+                                <span class="input-focus-line" aria-hidden="true"></span>
+                            </div>
+                            <span class="form-error" id="emailErr" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number <span
+                                    class="optional">(Optional)</span></label>
+                            <div class="neo-input-wrapper">
+                                <input type="tel" id="phone" name="phone" class="neo-input"
+                                    placeholder="****-****-**" autocomplete="tel" />
+                                <span class="input-focus-line" aria-hidden="true"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service" class="form-label">Service Interested In</label>
+                            <div class="neo-input-wrapper neo-select-wrapper">
+                                <select id="service" name="service" class="neo-input neo-select" required>
+                                    <option value="" disabled selected>Select a service...</option>
+                                    <option value="web">Web Development</option>
+                                    <option value="marketing">Digital Marketing</option>
+                                    <option value="design">Graphic Design</option>
+                                    <option value="full">Full Package</option>
+                                    <option value="other">Other / Consultation</option>
+                                </select>
+                                <span class="select-arrow" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                        width="16" height="16">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </span>
+                                <span class="input-focus-line" aria-hidden="true"></span>
+                            </div>
+                            <span class="form-error" id="serviceErr" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget" class="form-label">Budget Range</label>
+                            <div class="neo-input-wrapper neo-select-wrapper">
+                                <select id="budget" name="budget" class="neo-input neo-select">
+                                    <option value="" disabled selected>Select budget range...</option>
+                                    <option value="10k">₹10,000 – ₹25,000</option>
+                                    <option value="25k">₹25,000 – ₹50,000</option>
+                                    <option value="50k">₹50,000 – ₹1,00,000</option>
+                                    <option value="1L">₹1,00,000+</option>
+                                    <option value="discuss">Let's Discuss</option>
+                                </select>
+                                <span class="select-arrow" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                        width="16" height="16">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                </span>
+                                <span class="input-focus-line" aria-hidden="true"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Project Details</label>
+                            <div class="neo-input-wrapper">
+                                <textarea id="message" name="message" class="neo-input neo-textarea" rows="5"
+                                    placeholder="Tell us about your project, goals, and timeline..."
+                                    required></textarea>
+                                <span class="input-focus-line" aria-hidden="true"></span>
+                            </div>
+                            <span class="form-error" id="messageErr" role="alert"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary form-submit" id="formSubmitBtn">
+                            <span class="btn-label">Send Message</span>
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                width="18" height="18" aria-hidden="true">
+                                <path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z" />
+                            </svg>
+                        </button>
+
+                        <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+                            <span>✓</span>
+                            <p>Message sent! We'll respond within 24 hours.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Common Questions</p>
+                <h2 class="section-title">Frequently<br /><em>Asked</em></h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item glass-card" id="faq1">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqA1">
+                        How long does a typical project take?
+                        <span class="faq-arrow" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faqA1" hidden>
+                        <p>Project timelines vary by scope. A simple landing page takes 1-2 weeks, a full website 3-6
+                            weeks, and complex web apps or full marketing campaigns 2-3 months. We always provide a
+                            clear timeline after our initial consultation.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" id="faq2">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqA2">
+                        What is your payment structure?
+                        <span class="faq-arrow" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faqA2" hidden>
+                        <p>We typically work on a 50% upfront, 50% on delivery model for smaller projects. For larger
+                            engagements, we break payments into milestones tied to project phases. All payment terms are
+                            clearly outlined in our agreement.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" id="faq3">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqA3">
+                        Do you offer ongoing support after launch?
+                        <span class="faq-arrow" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faqA3" hidden>
+                        <p>Absolutely. All projects include a post-launch support period (30 days for Starter, 90 days
+                            for Growth). We also offer monthly retainer packages for ongoing maintenance, updates, and
+                            marketing services.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card" id="faq4">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faqA4">
+                        Can you work with clients outside India?
+                        <span class="faq-arrow" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faqA4" hidden>
+                        <p>Yes! We work with clients globally. Our team is fully remote-capable and experienced in
+                            cross-timezone collaboration. We accept international payments and adapt our communication
+                            schedule to fit your timezone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/contact.js"></script>
+    <script src="../scripts/cybernetic-grid.js"></script>
+    <script src="../scripts/footer-loader.js"></script>
+</body>
+
+</html>

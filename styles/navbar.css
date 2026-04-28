@@ -1,0 +1,452 @@
+/* ═══════════════════════════════════════════════════════════════
+   WIN AGENCY — navbar.css
+   Clean · Minimal · Modern SaaS Navigation
+   Multi-page website → links to separate .html files
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --nav-h: 72px;
+
+  /* ── GLASSMORPHISM TOKENS ── */
+  /* Base glass — 60% white, enough transparency to see background art */
+  --nav-bg:              rgba(255, 255, 255, 0.60);
+  /* Scrolled glass — slightly more opaque for readability */
+  --nav-bg-scrolled:     rgba(255, 255, 255, 0.82);
+
+  /* True glass edge: bright highlight on top, subtle shadow on bottom */
+  --nav-border:          rgba(255, 255, 255, 0.70);
+  --nav-border-scrolled: rgba(255, 255, 255, 0.85);
+
+  /* Layered shadow: tight dark line + wide diffuse glow */
+  --nav-shadow:          0 1px 0 rgba(0,0,0,0.05),
+                         0 8px 24px rgba(0,0,0,0.08),
+                         inset 0 -1px 0 rgba(0,0,0,0.06);
+  --nav-shadow-scrolled: 0 1px 0 rgba(0,0,0,0.08),
+                         0 12px 32px rgba(0,0,0,0.12),
+                         inset 0 -1px 0 rgba(0,0,0,0.08);
+
+  /* Link colours */
+  --nav-link-color:  #1e293b;
+  --nav-link-hover:  #6366F1;
+  --nav-link-active: #6366F1;
+
+  /* CTA pill — solid, high-contrast */
+  --nav-cta-bg:       #0f172a;
+  --nav-cta-hover-bg: #1e293b;
+  --nav-cta-color:    #ffffff;
+
+  /* Hamburger bars */
+  --nav-ham-color: #0f172a;
+
+  /* Mobile drawer — near-opaque so links stay crystal-clear */
+  --nav-drawer-bg: rgba(255, 255, 255, 0.96);
+
+  /* Transitions */
+  --nav-ease:  cubic-bezier(0.23, 1, 0.32, 1);
+  --nav-speed: 0.38s;
+}
+
+/* ── RESET: override global nav-h if already defined ──────────── */
+@media (max-width: 1024px) {
+  :root { --nav-h: 64px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   NAVBAR SHELL — GLASSMORPHISM PANEL
+   ═══════════════════════════════════════════════════════════════ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-h);
+  z-index: 1000;
+
+  /* ── GLASS EFFECT ── */
+  /* Semi-transparent base — 60% white lets background show through */
+  background: var(--nav-bg);
+  /* Strong blur + colour boost for premium frosted-glass look */
+  -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.04);
+          backdrop-filter: blur(20px) saturate(180%) brightness(1.04);
+
+  /* True glass border: bright highlight top, subtle shadow-line bottom */
+  border-bottom: 1px solid var(--nav-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.90);
+
+  /* Layered shadow for depth */
+  box-shadow: var(--nav-shadow);
+
+  transition:
+    background     var(--nav-speed) var(--nav-ease),
+    border-color   var(--nav-speed) var(--nav-ease),
+    box-shadow     var(--nav-speed) var(--nav-ease),
+    backdrop-filter var(--nav-speed) ease;
+}
+
+/* Denser glass when user has scrolled — more opaque, stronger shadow */
+.navbar.scrolled {
+  background: var(--nav-bg-scrolled);
+  border-bottom-color: var(--nav-border-scrolled);
+  -webkit-backdrop-filter: blur(24px) saturate(200%) brightness(1.05);
+          backdrop-filter: blur(24px) saturate(200%) brightness(1.05);
+  box-shadow: var(--nav-shadow-scrolled);
+}
+
+/* ── INNER CONTAINER ─────────────────────────────────────────── */
+.navbar__inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+
+  position: relative; /* for absolute-centered menu */
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LOGO (LEFT)
+   ═══════════════════════════════════════════════════════════════ */
+.navbar__brand {
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 0;
+}
+
+/* 3D canvas mount for win-logo.js */
+.win-logo-mount {
+  display: block;
+  width: 108px;
+  height: 44px;
+  position: relative;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.win-logo-mount canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Screen-reader text hidden visually */
+.navbar__logo .logo-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CENTER NAVIGATION LINKS
+   ═══════════════════════════════════════════════════════════════ */
+.navbar__menu {
+  /* Absolute centering — always at 50% regardless of logo/CTA width */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/* Desktop "Get Started" button item inside the list — hidden on desktop */
+.navbar__drawer-cta-wrap {
+  display: none;
+}
+
+/* ── Individual nav links ── */
+.nav-link {
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--nav-link-color);
+  text-decoration: none;
+  padding: 0.35rem 0;
+  letter-spacing: 0.01em;
+  transition: color var(--nav-speed) var(--nav-ease);
+  white-space: nowrap;
+}
+
+/* Animated underline — draws in from left on hover */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--nav-link-active);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--nav-speed) var(--nav-ease);
+}
+
+.nav-link:hover {
+  color: var(--nav-link-hover);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Active page state */
+.nav-link.active {
+  color: var(--nav-link-active);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RIGHT — CTA BUTTON + HAMBURGER
+   ═══════════════════════════════════════════════════════════════ */
+.navbar__actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 2;
+}
+
+/* ── "Get Started" CTA Pill ── */
+.navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1.4rem;
+  background: var(--nav-cta-bg);
+  color: var(--nav-cta-color);
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: 100px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background var(--nav-speed) var(--nav-ease),
+    transform 0.28s var(--nav-ease),
+    box-shadow 0.28s var(--nav-ease);
+  will-change: transform;
+}
+
+.navbar__cta:hover {
+  background: var(--nav-cta-hover-bg);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+}
+
+/* ── Hamburger Button (hidden on desktop) ── */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  padding: 7px;
+  background: none;
+  border: none;
+  cursor: pointer !important;
+  z-index: 1001;
+  flex-shrink: 0;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.navbar__hamburger:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* The 3 bars */
+.navbar__hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--nav-ham-color);
+  border-radius: 2px;
+  transform-origin: center;
+  transition:
+    transform 0.38s var(--nav-ease),
+    opacity   0.25s ease,
+    width     0.32s var(--nav-ease);
+}
+
+/* Morph into X */
+.navbar__hamburger[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar__hamburger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.navbar__hamburger[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TABLET + MOBILE  (≤ 1024px)
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+
+  /* Tighten inner padding on tablet/mobile */
+  .navbar__inner {
+    padding: 0 20px;
+  }
+
+  /* Show hamburger, hide desktop CTA */
+  .navbar__hamburger {
+    display: flex;
+  }
+  .navbar__cta {
+    display: none;
+  }
+
+  /* Pull navbar__menu out of the flow so it doesn't squash the flex row */
+  .navbar__menu {
+    position: static;
+    transform: none;
+    width: 0;
+    overflow: visible;
+  }
+
+  /* ── MOBILE DRAWER — slides down from below navbar ── */
+  .navbar__links {
+    /* Fixed position, full-width panel just below the navbar */
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    width: 100vw;
+    box-sizing: border-box;
+
+    background: var(--nav-drawer-bg);
+    /* Reduced blur on mobile — prevents lag on low-end devices */
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+            backdrop-filter: blur(10px) saturate(150%);
+    /* Bright top edge on drawer for glass continuity */
+    border-top: 1px solid rgba(255,255,255,0.80);
+
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0.5rem 0 2rem;
+
+    border-bottom: 1px solid var(--nav-border-scrolled);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.10);
+
+    /* Initial hidden state — above viewport */
+    transform: translateY(-115%);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform 0.42s var(--nav-ease),
+      opacity   0.35s ease;
+    z-index: 999;
+  }
+
+  /* Open state */
+  .navbar__links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* ── Drawer link rows ── */
+  .nav-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.95rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+
+  /* No slide-underline on mobile — not useful for touch */
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-link:hover {
+    background: rgba(99,102,241,0.05);
+    color: var(--nav-link-hover);
+  }
+
+  /* Active link in drawer */
+  .nav-link.active {
+    color: var(--nav-link-active);
+    background: rgba(99,102,241,0.07);
+    font-weight: 700;
+  }
+
+  /* ── CTA inside drawer ── */
+  .navbar__drawer-cta-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+  }
+
+  .navbar__drawer-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.1rem;
+    padding: 0.75rem 2.25rem;
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 0.925rem;
+    font-weight: 700;
+    border-radius: 100px;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    cursor: pointer !important;
+    transition:
+      background 0.3s var(--nav-ease),
+      transform  0.3s var(--nav-ease),
+      box-shadow 0.3s var(--nav-ease);
+  }
+
+  .navbar__drawer-cta:hover {
+    background: #6366F1;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(99,102,241,0.32);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SMALL MOBILE  (≤ 480px)
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .navbar__inner {
+    padding: 0 16px;
+  }
+}

@@ -1,0 +1,106 @@
+/* =====================================================
+   WIN AGENCY — LEGAL PAGES CSS
+   Clean, minimalistic, and flush plain text design
+   ===================================================== */
+
+.page-legal {
+  background: var(--off-white);
+  color: var(--charcoal);
+  font-family: var(--font-sans);
+}
+
+.legal-main {
+  padding-top: calc(var(--nav-h) + 2rem);
+  padding-bottom: var(--section-pad);
+}
+
+.legal-hero {
+  text-align: left;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 2rem;
+}
+
+.legal-hero h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  letter-spacing: -0.03em;
+  color: var(--charcoal);
+  margin-bottom: 0.5rem;
+}
+
+.legal-hero p.last-updated {
+  font-size: 0.95rem;
+  color: var(--mid-grey);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Replaced container structure with plain elegant layout */
+.legal-content-wrapper {
+  max-width: 1500px;
+  margin: 0 auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.legal-content-wrapper h2 {
+  font-size: 1.4rem;
+  color: var(--charcoal);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.legal-content-wrapper h2:first-of-type {
+  margin-top: 0;
+}
+
+.legal-content-wrapper h3 {
+  font-size: 1.15rem;
+  color: var(--dark-grey);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-content-wrapper p,
+.legal-content-wrapper li {
+  font-size: 1rem;
+  color: var(--charcoal);
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  opacity: 0.9;
+  text-align: justify;
+}
+
+.legal-content-wrapper ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.legal-contact-block {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  background: transparent;
+  border-left: 3px solid var(--accent);
+  padding-left: 1.5rem;
+}
+
+.legal-contact-block h3 {
+  margin-top: 0;
+  color: var(--charcoal);
+}
+
+.legal-contact-block p {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .legal-content-wrapper {
+    padding: 1rem 0;
+  }
+}

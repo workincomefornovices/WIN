@@ -1,0 +1,615 @@
+/* =====================================================
+   WIN AGENCY — GLOBAL.CSS
+   Light-Theme Design System
+   ===================================================== */
+
+/* ── TOKENS ── */
+:root {
+  /* Palette */
+  --white: #FFFFFF;
+  --off-white: #F8F9FA;
+  --ice-blue: #EEF2FF;
+  --soft-slate: #E8EDF5;
+  --charcoal: #1A1A1A;
+  --dark-grey: #2C2C2C;
+  --mid-grey: #6B7280;
+  --light-grey: #9CA3AF;
+  --border: rgba(255, 255, 255, 0.8);
+  --border-subtle: rgba(0, 0, 0, 0.07);
+
+  /* Accent — Ice Blue */
+  --accent: #6366F1;
+  --accent-light: #818CF8;
+  --accent-dark: #4F46E5;
+  --accent-mist: rgba(99, 102, 241, 0.08);
+  --accent-glow: rgba(99, 102, 241, 0.15);
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.62);
+  --glass-border: rgba(255, 255, 255, 0.85);
+  --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+  --glass-blur: blur(24px);
+
+  /* Shadows (sunlight / AO style) */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.10), 0 8px 16px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.12), 0 12px 24px rgba(0, 0, 0, 0.06);
+
+  /* Neumorphic (Inset) */
+  --neo-bg: #EEF2FF;
+  --neo-shadow-in: inset 4px 4px 10px rgba(163, 177, 198, 0.4), inset -4px -4px 10px rgba(255, 255, 255, 0.9);
+  --neo-focus: inset 2px 2px 6px rgba(99, 102, 241, 0.12), inset -2px -2px 6px rgba(255, 255, 255, 0.9), 0 0 0 2px rgba(99, 102, 241, 0.3);
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  /* Spacing */
+  --nav-h: 72px; /* canonical value — kept here for .page-hero padding-top; navbar.css owns the full nav token set */
+  --container: 1200px;
+  --section-pad: clamp(4rem, 8vw, 7rem);
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Premium easing — "weighty" Quint-out feel */
+  --premium-ease: cubic-bezier(0.23, 1, 0.32, 1);
+  --smooth-transition: 0.5s var(--premium-ease);
+
+  /* Page transition panels */
+  --pt-color: #6366F1;
+}
+
+/* ── RESET & BASE ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--off-white);
+  color: var(--charcoal);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  cursor: none;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: none;
+  border: none;
+  background: none;
+}
+
+/* ── SCROLL BAR ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--off-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-light);
+  border-radius: 10px;
+}
+
+/* ── SELECTION ── */
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ── CUSTOM CURSOR ── */
+#cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-out), height 0.3s var(--ease-out),
+    border-color 0.3s, background 0.3s, opacity 0.3s;
+  mix-blend-mode: normal;
+}
+
+#cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.12s var(--ease-out), opacity 0.3s;
+}
+
+body.cursor-hover #cursor-ring {
+  width: 56px;
+  height: 56px;
+  background: var(--accent-glow);
+  border-color: var(--accent);
+}
+
+/* ── CONTAINER ── */
+.container {
+  width: min(var(--container), 100% - 2rem);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+/* ── GLASS CARD ── */
+.glass-card {
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: var(--glass-shadow);
+}
+
+/* ── PAGE TRANSITION ── */
+#page-transition {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 8000;
+  display: flex;
+  flex-direction: column;
+}
+
+.pt-panel {
+  flex: 1;
+  transform: scaleX(0);
+  transform-origin: right;
+  background: var(--accent);
+}
+
+.pt-panel--1 {
+  background: #6366F1;
+}
+
+.pt-panel--2 {
+  background: #818CF8;
+}
+
+.pt-panel--3 {
+  background: #4F46E5;
+}
+
+/* ── NAVBAR ── */
+/* All navbar styles live in css/navbar.css — loaded in every HTML <head>.
+   The classes (.navbar, .navbar__*, .nav-link) are defined there.
+   global.css retains --nav-h for .page-hero padding-top only. */
+
+
+/* ── TYPOGRAPHY ── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--charcoal);
+}
+
+em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--accent);
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.section-header {
+  margin-bottom: 3.5rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+/* ── HARDWARE ACCELERATION — animated nodes, bars, orbital rings ── */
+/* Applied globally so PC and mobile both benefit from GPU compositing  */
+.b-node,
+.b-ring,
+.b-core,
+.abstract-ring,
+.bar-fill,
+.onode,
+.floating-accent-dot,
+.orb-particle,
+.about-scroll-line,
+.scroll-line {
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* ── PREMIUM HOVER — buttons, social pills, CTA ── */
+/* cubic-bezier gives a "weighty" deceleration feel on all interactive elements */
+.btn,
+.btn-start,
+.social-pill,
+.badge-pill,
+.value-pill,
+.navbar__cta,
+.about-btn-solid,
+.about-btn-ghost,
+.cta-container {
+  transition: transform var(--smooth-transition),
+    box-shadow var(--smooth-transition),
+    background-color 0.3s var(--premium-ease),
+    color 0.28s var(--premium-ease),
+    border-color 0.28s var(--premium-ease);
+  will-change: transform, box-shadow;
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: none;
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s, background 0.2s, color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.25);
+}
+
+.btn--primary:hover {
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.4);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--charcoal);
+  border: 1.5px solid var(--border-subtle);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── PAGE HERO BASE ── */
+.page-hero {
+  padding-top: calc(var(--nav-h) + 4rem);
+  padding-bottom: var(--section-pad);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero__title {
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-hero__title .reveal-line {
+  display: block;
+}
+
+.page-hero__title .italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+.page-hero__sub {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: var(--mid-grey);
+  max-width: 52ch;
+  line-height: 1.75;
+}
+
+/* ── SECTIONS ── */
+section {
+  padding-block: var(--section-pad);
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+/* ── MARQUEE ── */
+.marquee-strip {
+  overflow: hidden;
+  padding: 1.2rem 0;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  min-width: 100vw;
+  width: 100%;
+  margin-inline: calc(50% - 50vw); /* full-viewport flush on responsive borders */
+}
+
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  justify-content: flex-start;
+  min-width: 100%;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee-strip {
+    padding-inline: 0;
+    margin-inline: calc(50% - 50vw);
+  }
+
+  .marquee-track {
+    justify-content: flex-start;
+    min-width: 100%;
+  }
+}
+
+/* .cta-banner / .cta-inner removed — CTA is now exclusively
+   on the Services page and styled in services.css */
+
+/* ── FOOTER ── */
+/* Old footer styles (.footer, .footer-grid, .footer-brand, .footer-links,
+   .footer-contact, .footer-bottom) have been removed.
+   The new Masterpiece Footer is styled in css/footer.css
+   and injected via js/footer-loader.js */
+
+/* ── REVEAL ANIMATIONS (pre-state) ── */
+.reveal-text,
+.reveal-line {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+
+/* ── PROCESS STEPS ── */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.process-step {
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-num {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--accent-mist);
+  line-height: 1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.04em;
+}
+
+.process-step h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.process-step p {
+  font-size: 0.9rem;
+  color: var(--mid-grey);
+  line-height: 1.65;
+}
+
+/* ── ELASTIC IMAGE WRAPPER ── */
+[data-elastic] {
+  overflow: hidden;
+}
+
+/* ══════════════════════════════════════════════════════
+   TABLET & MOBILE (≤ 1024px)
+   NOTE: All navbar responsive CSS is in css/navbar.css
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  :root {
+    --nav-h: 64px; /* synced with navbar.css */
+  }
+
+  /* Layout utilities */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  /* Masterpiece footer responsive styles are in css/footer.css */
+
+  /* Restore system cursor on touch devices */
+  body {
+    cursor: auto;
+  }
+
+  #cursor-ring,
+  #cursor-dot {
+    display: none;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   MOBILE-ONLY SCROLL REVEAL PRE-STATE
+   Only applies below 1024px. JS (global.js) toggles
+   .section-revealed to animate sections into view.
+   PC layouts (above 1024px) are completely unaffected.
+   ══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+
+  /* Sections start invisible and 24px below — JS reveals them */
+  section.section-reveal-pending {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.75s var(--premium-ease),
+      transform 0.75s var(--premium-ease);
+  }
+
+  section.section-revealed {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Ensure animated sections never get stuck invisible */
+  .about-spatial-hero,
+  .contact-hero,
+  .brain-hero,
+  .testi-orbit-hero {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Stack all generic two-part hero grids vertically */
+  .hero-split-layout {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* Constrain animation stages so they don't overflow on portrait mobile */
+  .spatial-orb-wrap,
+  .orbit-hero__stage,
+  .brain-hero__right {
+    max-width: min(420px, 90vw);
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ── Smooth orbital animation timing on all screen sizes ── */
+@keyframes spin {
+  to {
+    transform: translateZ(0) rotate(360deg);
+  }
+}
+
+/* Ensure orbital rings use linear for perfectly smooth GPU-composited rotation */
+.b-ring,
+.abstract-ring {
+  animation-timing-function: linear;
+}

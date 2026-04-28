@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services — WIN Digital Agency</title>
+    <meta name="description"
+        content="Explore WIN's premium services: Web Development, Digital Marketing, Graphic Design, and SEO Strategy crafted for sustained growth and search dominance." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/navbar.css" />
+    <link rel="stylesheet" href="../styles/services.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+</head>
+
+<body class="page-services">
+
+    <div id="cursor-ring" aria-hidden="true"></div>
+    <div id="cursor-dot" aria-hidden="true"></div>
+
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar__inner">
+            <div class="navbar__brand">
+                <a href="../home/" class="navbar__logo" aria-label="WIN Home"
+                    style="display: flex; align-items: center; gap: 12px; pointer-events: auto;">
+                    <img src="../src-images/common-images/win-logo.png" alt="WIN Logo"
+                        style="height: 48px; width: auto; aspect-ratio: auto; margin-right: -4px;">
+                    <img src="../src-images/common-images/win-name.png" alt="WIN Wordmark"
+                        style="height: 22px; width: auto; aspect-ratio: auto;">
+                </a>
+            </div>
+            <div class="navbar__menu">
+                <ul class="navbar__links" id="navLinks" role="list">
+                    <li><a href="../home/" class="nav-link">Home</a></li>
+                    <li><a href="../about/" class="nav-link">About</a></li>
+                    <li><a href="../services/" class="nav-link active" aria-current="page">Services</a></li>
+                    <li><a href="../testimonials/" class="nav-link">Testimonials</a></li>
+                    <li><a href="../contact/" class="nav-link">Contact</a></li>
+                    <li class="navbar__drawer-cta-wrap">
+                        <a href="../contact/" class="navbar__drawer-cta">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar__actions">
+                <a href="../contact/" class="navbar__cta" id="navCta">Get Started</a>
+                <button class="navbar__hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="page-transition" aria-hidden="true">
+        <div class="pt-panel pt-panel--1"></div>
+        <div class="pt-panel pt-panel--2"></div>
+        <div class="pt-panel pt-panel--3"></div>
+    </div>
+
+    <!-- ══ SERVICES PLEXUS HERO ══ -->
+    <section class="page-hero services-hero" id="servicesHero" aria-label="Services hero">
+        <canvas id="plexusCanvas" aria-hidden="true"></canvas>
+        <div class="page-hero-content">
+            <div class="section-label">Our Capabilities</div>
+            <h1>Services That <span class="accent">WIN</span></h1>
+            <p>The price for the services in our company will be starting from Rs: 15,000/- to 1 Lac depending on the
+                services.</p>
+        </div>
+    </section><!-- /services-hero -->
+
+    <!-- ════════════════════════════════════════
+         SERVICES DETAIL
+    ════════════════════════════════════════ -->
+    <section class="services-detail" id="services">
+        <div class="container">
+            <div class="service-detail-block" id="webDev" data-elastic>
+                <div class="service-detail-text">
+                    <span class="service-num">01</span>
+                    <h2>Web<br /><em>Development</em></h2>
+                    <p>We craft custom, high-performance websites and web applications using cutting-edge technologies.
+                        From elegant landing pages to complex e-commerce platforms, every line of code is written for
+                        speed, scalability, and beauty.</p>
+                    <ul class="service-features">
+                        <li><span class="feat-icon">✦</span> Custom React &amp; Next.js Applications</li>
+                        <li><span class="feat-icon">✦</span> E-Commerce &amp; Payment Integration</li>
+                        <li><span class="feat-icon">✦</span> Mobile-First Responsive Design</li>
+                        <li><span class="feat-icon">✦</span> Performance Optimization &amp; Core Web Vitals</li>
+                        <li><span class="feat-icon">✦</span> API Development &amp; CMS Integration</li>
+                    </ul>
+                    <a href="../contact/" class="btn btn--primary" id="srvWebCta">Get a Quote</a>
+                </div>
+                <div class="service-detail-visual glass-card">
+                    <div class="code-window" id="codeWindowWebDev">
+                        <div class="code-window__bar">
+                            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                            <span class="code-window__title">win_project.tsx</span>
+                        </div>
+                        <!-- typing-container: JS writes characters here on viewport entry -->
+                        <div class="code-content" id="typing-container" aria-label="Animated code demo"
+                            aria-live="polite"></div>
+                    </div>
+                    <div class="metric-pills">
+                        <div class="metric-pill"><span>⚡</span>99 Performance</div>
+                        <div class="metric-pill"><span>♿</span>100 Accessibility</div>
+                        <div class="metric-pill"><span>🔍</span>98 SEO</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail-block reverse" id="marketing" data-elastic>
+                <div class="service-detail-text">
+                    <span class="service-num">02</span>
+                    <h2>Digital<br /><em>Marketing</em></h2>
+                    <p>We design data-driven marketing ecosystems that put your brand in front of the right audience at
+                        the right time. From search dominance to viral social campaigns, we architect your online growth
+                        engine.</p>
+                    <ul class="service-features">
+                        <li><span class="feat-icon">✦</span> SEO &amp; Content Strategy</li>
+                        <li><span class="feat-icon">✦</span> Google &amp; Meta Ads Management</li>
+                        <li><span class="feat-icon">✦</span> Social Media Growth &amp; Engagement</li>
+                        <li><span class="feat-icon">✦</span> Email Marketing Automation</li>
+                        <li><span class="feat-icon">✦</span> Analytics &amp; Conversion Optimization</li>
+                    </ul>
+                    <a href="../contact/" class="btn btn--primary" id="srvMktCta">Get a Quote</a>
+                </div>
+                <div class="service-detail-visual glass-card">
+                    <div class="chart-visual" id="marketingChartVisual">
+                        <p class="chart-label">Monthly Growth</p>
+                        <div class="chart-bars" id="marketingChartBars">
+                            <div class="chart-bar" data-h="40">
+                                <div class="bar-fill"></div><span>Jan</span>
+                            </div>
+                            <div class="chart-bar" data-h="55">
+                                <div class="bar-fill"></div><span>Feb</span>
+                            </div>
+                            <div class="chart-bar" data-h="45">
+                                <div class="bar-fill"></div><span>Mar</span>
+                            </div>
+                            <div class="chart-bar" data-h="70">
+                                <div class="bar-fill"></div><span>Apr</span>
+                            </div>
+                            <div class="chart-bar" data-h="60">
+                                <div class="bar-fill"></div><span>May</span>
+                            </div>
+                            <div class="chart-bar" data-h="85">
+                                <div class="bar-fill"></div><span>Jun</span>
+                            </div>
+                            <div class="chart-bar highlight" data-h="95">
+                                <div class="bar-fill"></div><span>Jul</span>
+                            </div>
+                        </div>
+                        <div class="chart-stat" id="chartStatBadge">+240% Revenue Growth</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="service-detail-block" id="graphicDesign" data-elastic>
+                <div class="service-detail-text">
+                    <span class="service-num">03</span>
+                    <h2>Graphic<br /><em>Design</em></h2>
+                    <p>We translate your brand's essence into timeless visual language. Logos, brand systems, packaging,
+                        and print — every touchpoint refined to perfection with a sharp, strategic eye.</p>
+                    <ul class="service-features">
+                        <li><span class="feat-icon">✦</span> Logo &amp; Brand Identity Design</li>
+                        <li><span class="feat-icon">✦</span> UI/UX Design &amp; Prototyping</li>
+                        <li><span class="feat-icon">✦</span> Social Media Creative Production</li>
+                        <li><span class="feat-icon">✦</span> Print &amp; Packaging Design</li>
+                        <li><span class="feat-icon">✦</span> Motion Graphics &amp; Video Editing</li>
+                    </ul>
+                    <a href="../contact/" class="btn btn--primary" id="srvDsgCta">Get a Quote</a>
+                </div>
+                <div class="service-detail-visual glass-card">
+                    <div class="design-palette">
+                        <div class="palette-circles">
+                            <div class="pcircle" style="background:#1A1A1A;"></div>
+                            <div class="pcircle" style="background:linear-gradient(135deg,#667eea,#764ba2)"></div>
+                            <div class="pcircle" style="background:linear-gradient(135deg,#f093fb,#f5576c)"></div>
+                            <div class="pcircle" style="background:linear-gradient(135deg,#4facfe,#00f2fe)"></div>
+                            <div class="pcircle" style="background:linear-gradient(135deg,#43e97b,#38f9d7)"></div>
+                        </div>
+                        <p class="palette-label">Brand Palette System</p>
+                        <div class="design-preview-text">
+                            <span style="font-weight:900;font-size:2rem;letter-spacing:-1px;">Aa</span>
+                            <span style="font-size:0.8rem;opacity:0.5;margin-left:1rem;">Inter · Playfair</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ════════════════════════════════════════
+                 04  SEO STRATEGY — "Live Dashboard" Visual
+                 Layout: visual LEFT · text RIGHT (mirror of #03)
+                 ════════════════════════════════════════ -->
+            <div class="service-detail-block seo-block" id="seoStrategy" data-elastic>
+
+                <!-- ── LEFT : Search Engine Performance Dashboard ── -->
+                <div class="service-detail-visual glass-card seo-dashboard" id="seoDashboard">
+                    <!-- Dashboard header bar -->
+                    <div class="seo-db-header">
+                        <span class="seo-db-dot seo-db-dot--live" aria-hidden="true"></span>
+                        <span class="seo-db-title">SEO Performance</span>
+                        <span class="seo-db-badge">LIVE</span>
+                    </div>
+
+                    <div class="seo-dashboard-grid">
+
+                        <!-- 1. Overall Traffic Graph -->
+                        <div class="seo-db-card seo-db-traffic-card">
+                            <h4 class="seo-db-card-title">Overall Traffic</h4>
+                            <div class="seo-traffic-graph">
+                                <svg viewBox="0 0 300 100" class="seo-traffic-svg" preserveAspectRatio="xMidYMid meet">
+                                    <defs>
+                                        <linearGradient id="trafficGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#22C55E" stop-opacity="0.5" />
+                                            <stop offset="100%" stop-color="#22C55E" stop-opacity="0.0" />
+                                        </linearGradient>
+                                        <filter id="trafficGlow">
+                                            <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                                            <feMerge>
+                                                <feMergeNode in="coloredBlur" />
+                                                <feMergeNode in="SourceGraphic" />
+                                            </feMerge>
+                                        </filter>
+                                    </defs>
+                                    <polygon id="seoTrafficAreaNew"
+                                        points="0,100 0,80 50,60 100,70 150,40 200,50 250,20 300,10 300,100"
+                                        fill="url(#trafficGradient)" opacity="0" />
+                                    <path id="seoTrafficPathNew"
+                                        d="M0,80 L50,60 L100,70 L150,40 L200,50 L250,20 L300,10" fill="none"
+                                        stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                                        filter="url(#trafficGlow)" stroke-dasharray="400" stroke-dashoffset="400" />
+                                    <g id="seoTrafficPointsNew" opacity="0">
+                                        <circle cx="50" cy="60" r="4" fill="#fff" stroke="#22C55E" stroke-width="2" />
+                                        <circle cx="100" cy="70" r="4" fill="#fff" stroke="#22C55E" stroke-width="2" />
+                                        <circle cx="150" cy="40" r="4" fill="#fff" stroke="#22C55E" stroke-width="2" />
+                                        <circle cx="200" cy="50" r="4" fill="#fff" stroke="#22C55E" stroke-width="2" />
+                                        <circle cx="250" cy="20" r="4" fill="#fff" stroke="#22C55E" stroke-width="2" />
+                                        <circle cx="300" cy="10" r="4" fill="#fff" stroke="#22C55E" stroke-width="2" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="seo-dashboard-row">
+                            <!-- 2. Ranking Score -->
+                            <div class="seo-db-card seo-db-gauge-card">
+                                <h4 class="seo-db-card-title">Ranking Score</h4>
+                                <div class="seo-gauge-wrapper">
+                                    <svg viewBox="0 0 100 65" class="seo-gauge-svg" preserveAspectRatio="xMidYMid meet">
+                                        <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="#f0f0f0"
+                                            stroke-width="8" stroke-linecap="round" />
+                                        <defs>
+                                            <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="#ef4444" />
+                                                <stop offset="30%" stop-color="#F59E0B" />
+                                                <stop offset="100%" stop-color="#22C55E" />
+                                            </linearGradient>
+                                        </defs>
+                                        <path id="seoGaugeArc" d="M 10 50 A 40 40 0 0 1 90 50" fill="none"
+                                            stroke="url(#gaugeGradient)" stroke-width="8" stroke-linecap="round"
+                                            stroke-dasharray="126" stroke-dashoffset="126" />
+                                        <g id="seoGaugeNeedle" transform="rotate(-90, 50, 50)">
+                                            <polygon points="48,50 52,50 50,18" fill="#3B82F6" />
+                                            <circle cx="50" cy="50" r="5" fill="#3B82F6" />
+                                            <circle cx="50" cy="50" r="2" fill="#fff" />
+                                        </g>
+                                    </svg>
+                                    <div class="seo-gauge-score" id="seoGaugeScore">0</div>
+                                </div>
+                            </div>
+
+                            <!-- 3. Sitemap Coverage -->
+                            <div class="seo-db-card seo-db-sitemap-card">
+                                <h4 class="seo-db-card-title">Sitemap Coverage</h4>
+                                <div class="seo-sitemap-map" id="seoSitemapMap">
+                                    <div class="sitemap-node sitemap-root" id="sitemapRoot">100%</div>
+                                    <div class="sitemap-lines">
+                                        <svg viewBox="0 0 100 80">
+                                            <line x1="50" y1="20" x2="20" y2="60" class="sitemap-line sitemap-line-1"
+                                                stroke="#E5E7EB" stroke-width="2" stroke-dasharray="60"
+                                                stroke-dashoffset="60" />
+                                            <line x1="50" y1="20" x2="50" y2="60" class="sitemap-line sitemap-line-2"
+                                                stroke="#E5E7EB" stroke-width="2" stroke-dasharray="60"
+                                                stroke-dashoffset="60" />
+                                            <line x1="50" y1="20" x2="80" y2="60" class="sitemap-line sitemap-line-3"
+                                                stroke="#E5E7EB" stroke-width="2" stroke-dasharray="60"
+                                                stroke-dashoffset="60" />
+                                        </svg>
+                                    </div>
+                                    <div class="sitemap-nodes-children">
+                                        <div class="sitemap-node sitemap-child c-1">Home</div>
+                                        <div class="sitemap-node sitemap-child c-2">Blog</div>
+                                        <div class="sitemap-node sitemap-child c-3">Shop</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="seo-dashboard-row">
+                            <!-- 4. Data Structure -->
+                            <div class="seo-db-card seo-db-structure-card">
+                                <h4 class="seo-db-card-title">Data Structure</h4>
+                                <div class="seo-data-orbit">
+                                    <div class="orbit-center">
+                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="#3B82F6">
+                                            <path
+                                                d="M12 2C6.48 2 2 3.79 2 6v12c0 2.21 4.48 4 10 4s10-1.79 10-4V6c0-2.21-4.48-4-10-4zm0 2c4.42 0 8 1.12 8 2.5S16.42 9 12 9 4 7.88 4 6.5 7.58 4 12 4zm0 14c-4.42 0-8-1.12-8-2.5V13.1c1.86 1.15 4.7 1.9 8 1.9s6.14-.75 8-1.9v2.4c0 1.38-3.58 2.5-8 2.5zm0-4c-4.42 0-8-1.12-8-2.5V9.1c1.86 1.15 4.7 1.9 8 1.9s6.14-.75 8-1.9v2.4c0 1.38-3.58 2.5-8 2.5z" />
+                                        </svg>
+                                    </div>
+                                    <div class="orbit-ring orbit-ring-1">
+                                        <div class="orbit-bit bit-1"></div>
+                                    </div>
+                                    <div class="orbit-ring orbit-ring-2">
+                                        <div class="orbit-bit bit-2"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 5. Visibility Index -->
+                            <div class="seo-db-card seo-db-visibility-card">
+                                <h4 class="seo-db-card-title">Visibility Index</h4>
+                                <div class="seo-visibility-pulse" id="seoVisibilityPulse">
+                                    <div class="seo-vis-icon-wrap">
+                                        <svg viewBox="0 0 24 24" width="28" height="28" fill="#3B82F6">
+                                            <path
+                                                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                        </svg>
+                                    </div>
+                                    <div class="seo-vis-stat" id="seoVisStat">+14.2%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- /seo-dashboard -->
+
+                <!-- ── RIGHT : Text Content ── -->
+                <div class="service-detail-text" id="seoText">
+                    <span class="service-num">04</span>
+                    <h2 class="seo-heading">
+                        SEO<br /><em>Strategy</em>
+                    </h2>
+                    <p>We implement data-driven, holistic SEO methodologies designed to increase organic
+                        traffic and visibility. From technical audits to content execution, our strategy is
+                        built for sustained growth and search dominance.</p>
+                    <ul class="service-features" id="seoFeatureList">
+                        <li><span class="feat-icon">✦</span> Comprehensive Keyword Research</li>
+                        <li><span class="feat-icon">✦</span> On-Page &amp; Technical SEO Audits</li>
+                        <li><span class="feat-icon">✦</span> Content Creation &amp; Optimization</li>
+                        <li><span class="feat-icon">✦</span> High-Quality Backlink Building</li>
+                        <li><span class="feat-icon">✦</span> Performance Tracking &amp; Reporting</li>
+                    </ul>
+                    <a href="../contact/" class="btn btn--primary seo-cta" id="srvSeoCta">Get a Quote</a>
+                </div>
+
+            </div><!-- /seoStrategy -->
+
+            <!-- ════════════════════════════════════════
+                 05  PRODUCT PHOTOGRAPHY — Camera Viewfinder
+                 Layout: text LEFT · viewfinder RIGHT
+                 ════════════════════════════════════════ -->
+            <div class="service-detail-block" id="productPhotography" data-elastic>
+
+                <!-- ── LEFT : Text Content ── -->
+                <div class="service-detail-text" id="photoText">
+                    <span class="service-num">05</span>
+                    <h2>Product<br /><em>Photography</em></h2>
+                    <p>We craft high-definition visual assets designed to showcase products
+                        with unmatched detail and precision. Our specialized studio approach
+                        elevates e-commerce and marketing with striking clarity and consistent
+                        brand aesthetics.</p>
+                    <ul class="service-features" id="photoFeatureList">
+                        <li><span class="feat-icon">✦</span> High-Resolution E-commerce Shots</li>
+                        <li><span class="feat-icon">✦</span> Creative Lifestyle Shoots</li>
+                        <li><span class="feat-icon">✦</span> Professional Lighting &amp; Composition</li>
+                        <li><span class="feat-icon">✦</span> High-End Post-Processing &amp; Retouching</li>
+                        <li><span class="feat-icon">✦</span> 360° Rotating Visuals</li>
+                    </ul>
+                    <a href="../contact/" class="btn btn--primary photo-cta" id="srvPhotoCta">Get a Quote</a>
+                </div>
+
+                <!-- ── RIGHT : Camera Viewfinder ── -->
+                <div class="service-detail-visual photo-viewfinder" id="photoViewfinder" role="img"
+                    aria-label="Interactive camera viewfinder showing product photography setup">
+                    <div class="vf-wrap" id="vfWrap">
+
+                        <!-- Corner bracket guides (HUD aesthetic) -->
+                        <div class="vf-corner vf-corner--tl" aria-hidden="true"></div>
+                        <div class="vf-corner vf-corner--tr" aria-hidden="true"></div>
+                        <div class="vf-corner vf-corner--bl" aria-hidden="true"></div>
+                        <div class="vf-corner vf-corner--br" aria-hidden="true"></div>
+
+                        <!-- Grid scan-lines overlay -->
+                        <div class="vf-scanlines" aria-hidden="true"></div>
+
+                        <!-- ── Central Lens Circle ── -->
+                        <div class="vf-lens" id="vfLens" aria-hidden="true">
+                            <!-- AF focus bracket (appears after autofocus sweep) -->
+                            <div class="vf-focus-box" id="vfFocusBox"></div>
+
+                            <!-- Crosshair guides -->
+                            <div class="vf-crosshair">
+                                <span class="vf-ch-h"></span>
+                                <span class="vf-ch-v"></span>
+                            </div>
+
+                            <!-- Product Subject A — face-on luxury watch (SVG) -->
+                            <div class="vf-subject" id="vfSubjectA">
+                                <svg viewBox="0 0 160 200" class="vf-prod-svg" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <radialGradient id="cgA" cx="35%" cy="30%">
+                                            <stop offset="0%" stop-color="#2d2d5e" />
+                                            <stop offset="100%" stop-color="#08081c" />
+                                        </radialGradient>
+                                        <radialGradient id="dgA" cx="40%" cy="35%">
+                                            <stop offset="0%" stop-color="#1e1b4b" />
+                                            <stop offset="65%" stop-color="#0e0e2a" />
+                                            <stop offset="100%" stop-color="#040412" />
+                                        </radialGradient>
+                                        <linearGradient id="sgA" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#312e81" />
+                                            <stop offset="100%" stop-color="#1a1a2e" />
+                                        </linearGradient>
+                                        <filter id="glowA">
+                                            <feGaussianBlur stdDeviation="2" result="blur" />
+                                            <feMerge>
+                                                <feMergeNode in="blur" />
+                                                <feMergeNode in="SourceGraphic" />
+                                            </feMerge>
+                                        </filter>
+                                    </defs>
+                                    <!-- Strap top -->
+                                    <rect x="56" y="4" width="48" height="40" rx="10" fill="url(#sgA)" stroke="#6366f1"
+                                        stroke-width="1" />
+                                    <rect x="64" y="8" width="32" height="2" rx="1" fill="#6366f1" opacity="0.4" />
+                                    <rect x="64" y="14" width="32" height="2" rx="1" fill="#6366f1" opacity="0.25" />
+                                    <!-- Strap bottom -->
+                                    <rect x="56" y="156" width="48" height="40" rx="10" fill="url(#sgA)"
+                                        stroke="#6366f1" stroke-width="1" />
+                                    <rect x="64" y="186" width="32" height="2" rx="1" fill="#6366f1" opacity="0.4" />
+                                    <rect x="64" y="180" width="32" height="2" rx="1" fill="#6366f1" opacity="0.25" />
+                                    <!-- Case outer -->
+                                    <circle cx="80" cy="100" r="60" fill="url(#cgA)" stroke="#6366f1"
+                                        stroke-width="1.5" />
+                                    <!-- Highlight reflection -->
+                                    <path d="M38 72 Q80 58 122 72" stroke="rgba(255,255,255,0.06)" stroke-width="8"
+                                        fill="none" />
+                                    <!-- Bezel tick ring -->
+                                    <circle cx="80" cy="100" r="54" fill="none" stroke="#818cf8" stroke-width="0.7"
+                                        stroke-dasharray="2.5 2" />
+                                    <!-- Dial -->
+                                    <circle cx="80" cy="100" r="48" fill="url(#dgA)" />
+                                    <!-- Subtle inner glow on dial -->
+                                    <circle cx="80" cy="100" r="48" fill="none" stroke="#6366f1" stroke-width="1.5"
+                                        opacity="0.18" />
+                                    <!-- Hour markers (12, 3, 6, 9) -->
+                                    <rect x="78" y="55" width="4" height="9" rx="2" fill="#c7d2fe" />
+                                    <rect x="78" y="136" width="4" height="9" rx="2" fill="#c7d2fe" />
+                                    <rect x="55" y="98" width="9" height="4" rx="2" fill="#c7d2fe" />
+                                    <rect x="96" y="98" width="9" height="4" rx="2" fill="#c7d2fe" />
+                                    <!-- Minor markers -->
+                                    <line x1="118" y1="72" x2="113" y2="77" stroke="#818cf8" stroke-width="1.2"
+                                        stroke-linecap="round" />
+                                    <line x1="42" y1="72" x2="47" y2="77" stroke="#818cf8" stroke-width="1.2"
+                                        stroke-linecap="round" />
+                                    <line x1="42" y1="128" x2="47" y2="123" stroke="#818cf8" stroke-width="1.2"
+                                        stroke-linecap="round" />
+                                    <line x1="118" y1="128" x2="113" y2="123" stroke="#818cf8" stroke-width="1.2"
+                                        stroke-linecap="round" />
+                                    <!-- Brand name -->
+                                    <text x="80" y="88" text-anchor="middle" font-size="6" fill="#a5b4fc"
+                                        font-family="Outfit,sans-serif" font-weight="800" letter-spacing="3">WIN</text>
+                                    <text x="80" y="95" text-anchor="middle" font-size="3.5" fill="#6366f1"
+                                        font-family="Outfit,sans-serif" letter-spacing="1.5" opacity="0.8">STUDIO</text>
+                                    <!-- Date window -->
+                                    <rect x="92" y="97" width="15" height="10" rx="2" fill="#0a0a20" stroke="#6366f1"
+                                        stroke-width="0.8" />
+                                    <text x="99.5" y="104.5" text-anchor="middle" font-size="5.5" fill="#a5b4fc"
+                                        font-family="Outfit,sans-serif" font-weight="700">14</text>
+                                    <!-- Hour hand -->
+                                    <line x1="80" y1="100" x2="80" y2="68" stroke="white" stroke-width="3.5"
+                                        stroke-linecap="round" filter="url(#glowA)" />
+                                    <!-- Minute hand -->
+                                    <line x1="80" y1="100" x2="106" y2="93" stroke="#c7d2fe" stroke-width="2.5"
+                                        stroke-linecap="round" />
+                                    <!-- Second hand -->
+                                    <line x1="80" y1="100" x2="65" y2="118" stroke="#6366f1" stroke-width="1.2"
+                                        stroke-linecap="round" />
+                                    <!-- Center cap -->
+                                    <circle cx="80" cy="100" r="4" fill="#6366f1" />
+                                    <circle cx="80" cy="100" r="2" fill="white" />
+                                    <!-- Crown -->
+                                    <rect x="139" y="97" width="9" height="7" rx="2" fill="#312e81" stroke="#818cf8"
+                                        stroke-width="0.8" />
+                                    <rect x="140.5" y="98.5" width="6" height="4" rx="1" fill="#6366f1" opacity="0.6" />
+                                </svg>
+                            </div>
+
+                            <!-- Product Subject B — angled watch (hidden initially) -->
+                            <div class="vf-subject vf-subject--hidden" id="vfSubjectB">
+                                <svg viewBox="0 0 160 200" class="vf-prod-svg" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <radialGradient id="cgB" cx="30%" cy="28%">
+                                            <stop offset="0%" stop-color="#312e81" />
+                                            <stop offset="100%" stop-color="#06060f" />
+                                        </radialGradient>
+                                        <radialGradient id="dgB" cx="35%" cy="30%">
+                                            <stop offset="0%" stop-color="#1e1b4b" />
+                                            <stop offset="70%" stop-color="#0c0c22" />
+                                            <stop offset="100%" stop-color="#040412" />
+                                        </radialGradient>
+                                        <linearGradient id="sgB" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#1e1b4b" />
+                                            <stop offset="100%" stop-color="#0f0f2e" />
+                                        </linearGradient>
+                                        <filter id="glowB">
+                                            <feGaussianBlur stdDeviation="2.5" result="blur" />
+                                            <feMerge>
+                                                <feMergeNode in="blur" />
+                                                <feMergeNode in="SourceGraphic" />
+                                            </feMerge>
+                                        </filter>
+                                    </defs>
+                                    <!-- Angled strap top -->
+                                    <rect x="52" y="6" width="50" height="38" rx="10" fill="url(#sgB)" stroke="#818cf8"
+                                        stroke-width="1" transform="rotate(-10 77 25)" />
+                                    <!-- Angled strap bottom -->
+                                    <rect x="58" y="158" width="50" height="38" rx="10" fill="url(#sgB)"
+                                        stroke="#818cf8" stroke-width="1" transform="rotate(10 83 177)" />
+                                    <!-- Case angled (ellipse for 3D feel) -->
+                                    <ellipse cx="83" cy="100" rx="62" ry="58" fill="url(#cgB)" stroke="#818cf8"
+                                        stroke-width="1.5" />
+                                    <!-- Side depth edge -->
+                                    <ellipse cx="83" cy="104" rx="62" ry="58" fill="none" stroke="#312e81"
+                                        stroke-width="3" opacity="0.5" />
+                                    <!-- Highlight arc -->
+                                    <path d="M30 76 Q83 60 136 76" stroke="rgba(255,255,255,0.09)" stroke-width="10"
+                                        fill="none" />
+                                    <!-- Bezel angled -->
+                                    <ellipse cx="83" cy="100" rx="56" ry="52" fill="none" stroke="#6366f1"
+                                        stroke-width="0.8" stroke-dasharray="2.5 2" />
+                                    <!-- Dial angled -->
+                                    <ellipse cx="83" cy="100" rx="49" ry="46" fill="url(#dgB)" />
+                                    <!-- Subtle inner ring -->
+                                    <ellipse cx="83" cy="100" rx="49" ry="46" fill="none" stroke="#6366f1"
+                                        stroke-width="1.5" opacity="0.15" />
+                                    <!-- Markers on ellipse -->
+                                    <rect x="81" y="57" width="4" height="8" rx="2" fill="#c7d2fe" />
+                                    <rect x="81" y="135" width="4" height="8" rx="2" fill="#c7d2fe" />
+                                    <rect x="38" y="98" width="8" height="4" rx="2" fill="#c7d2fe" />
+                                    <rect x="99" y="98" width="8" height="4" rx="2" fill="#c7d2fe" />
+                                    <!-- Brand -->
+                                    <text x="83" y="89" text-anchor="middle" font-size="6" fill="#a5b4fc"
+                                        font-family="Outfit,sans-serif" font-weight="800" letter-spacing="3">WIN</text>
+                                    <text x="83" y="96" text-anchor="middle" font-size="3.5" fill="#818cf8"
+                                        font-family="Outfit,sans-serif" letter-spacing="1.5" opacity="0.8">STUDIO</text>
+                                    <!-- Hour hand (different angle = different time) -->
+                                    <line x1="83" y1="100" x2="98" y2="72" stroke="white" stroke-width="3.5"
+                                        stroke-linecap="round" filter="url(#glowB)" />
+                                    <!-- Minute hand -->
+                                    <line x1="83" y1="100" x2="83" y2="60" stroke="#c7d2fe" stroke-width="2.5"
+                                        stroke-linecap="round" />
+                                    <!-- Second hand -->
+                                    <line x1="83" y1="100" x2="66" y2="115" stroke="#818cf8" stroke-width="1.2"
+                                        stroke-linecap="round" />
+                                    <!-- Center cap -->
+                                    <circle cx="83" cy="100" r="4" fill="#4f46e5" />
+                                    <circle cx="83" cy="100" r="2" fill="white" />
+                                    <!-- Crown (side-angle visible) -->
+                                    <rect x="143" y="97" width="10" height="7" rx="2" fill="url(#sgB)" stroke="#a5b4fc"
+                                        stroke-width="0.8" transform="rotate(-6 148 100)" />
+                                    <!-- Second crown button -->
+                                    <rect x="143" y="106" width="8" height="5" rx="2" fill="url(#sgB)" stroke="#818cf8"
+                                        stroke-width="0.7" transform="rotate(-6 147 108)" />
+                                </svg>
+                            </div>
+
+                            <!-- Shutter flash overlay -->
+                            <div class="vf-flash" id="vfFlash" aria-hidden="true"></div>
+                        </div><!-- /vf-lens -->
+
+                        <!-- Floating stat badges (glitch-in on entry) -->
+                        <div class="vf-badge vf-badge--shutter" id="vfBadgeShutter" aria-label="Shutter Speed">
+                            <span class="vf-badge__icon" aria-hidden="true">⚡</span>
+                            <div class="vf-badge__info">
+                                <span class="vf-badge__val">1/250</span>
+                                <span class="vf-badge__lbl">Shutter</span>
+                            </div>
+                        </div>
+                        <div class="vf-badge vf-badge--aperture" id="vfBadgeAperture" aria-label="Aperture">
+                            <span class="vf-badge__icon" aria-hidden="true">◎</span>
+                            <div class="vf-badge__info">
+                                <span class="vf-badge__val">f/2.8</span>
+                                <span class="vf-badge__lbl">Aperture</span>
+                            </div>
+                        </div>
+                        <div class="vf-badge vf-badge--iso" id="vfBadgeIso" aria-label="ISO Sensitivity">
+                            <span class="vf-badge__icon" aria-hidden="true">☀</span>
+                            <div class="vf-badge__info">
+                                <span class="vf-badge__val">ISO 100</span>
+                                <span class="vf-badge__lbl">Sensitivity</span>
+                            </div>
+                        </div>
+
+                        <!-- Live metric bars panel -->
+                        <div class="vf-bars-panel" id="vfBarsPanel" aria-label="Camera sensor readings">
+                            <div class="vf-bar-row">
+                                <span class="vf-bar-lbl">Focus</span>
+                                <div class="vf-bar-track">
+                                    <div class="vf-bar-fill vf-bar--focus" id="vfBarFocus"></div>
+                                </div>
+                            </div>
+                            <div class="vf-bar-row">
+                                <span class="vf-bar-lbl">Exposure</span>
+                                <div class="vf-bar-track">
+                                    <div class="vf-bar-fill vf-bar--exposure" id="vfBarExposure"></div>
+                                </div>
+                            </div>
+                            <div class="vf-bar-row">
+                                <span class="vf-bar-lbl">Color</span>
+                                <div class="vf-bar-track">
+                                    <div class="vf-bar-fill vf-bar--color" id="vfBarColor"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom camera info strip -->
+                        <div class="vf-bottom-strip" aria-hidden="true">
+                            <span class="vf-rec"><span class="vf-rec-dot"></span>REC</span>
+                            <span class="vf-bottom-tag">24MP · RAW+JPEG</span>
+                            <span class="vf-shutter-count" id="vfShutterCount">0001</span>
+                        </div>
+
+                    </div><!-- /vf-wrap -->
+                </div><!-- /photo-viewfinder -->
+
+            </div><!-- /productPhotography -->
+
+        </div>
+    </section>
+
+    <!-- ══ PRICING SECTION — Animated Masterpiece ══ -->
+    <section class="pricing-teaser" id="pricingSection" aria-label="Transparent Pricing">
+
+        <!-- Ambient radial gradient matching hero tone -->
+        <div class="pricing-bg-gradient" aria-hidden="true"></div>
+
+        <div class="container pricing-container">
+
+            <!-- ── Section header ── -->
+            <div class="pricing-header">
+
+                <!-- Eyebrow -->
+                <div class="pricing-eyebrow" id="pricingEyebrow" aria-hidden="true">
+                    <span class="pricing-eyebrow__zap">⚡</span>
+                    <span>Transparent Pricing</span>
+                </div>
+
+                <!-- Vertical-Cut headline: each word is wrapped so JS can
+                     clip-path reveal them word by word -->
+                <h2 class="pricing-headline" id="pricingHeadline">
+                    <span class="vcr-word-wrap"><span class="vcr-word">Simple,</span></span>
+                    <span class="vcr-word-wrap"><span class="vcr-word">Fair</span></span>
+                    <span class="vcr-word-wrap"><span class="vcr-word pricing-word-accent">Investment</span></span>
+                </h2>
+
+                <!-- Spring-loaded billing toggle -->
+                <div class="pricing-toggle-wrap" id="pricingToggleWrap">
+                    <div class="pricing-toggle" id="pricingToggle" role="group" aria-label="Billing cycle">
+                        <!-- Spring pill tracks the active button via JS -->
+                        <span class="toggle-pill" id="togglePill" aria-hidden="true"></span>
+                        <button class="toggle-btn toggle-btn--active" id="toggleProject" data-value="project"
+                            aria-pressed="true">
+                            Project Base
+                        </button>
+                        <button class="toggle-btn" id="toggleMonthly" data-value="monthly" aria-pressed="false">
+                            Monthly
+                        </button>
+                    </div>
+                </div>
+
+            </div><!-- /pricing-header -->
+
+            <!-- ── Pricing cards grid ── -->
+            <div class="pricing-grid" id="pricingGrid">
+
+                <!-- STARTER -->
+                <div class="pricing-card" id="pricStarter" data-plan="starter">
+                    <div class="pricing-card__inner glass-card">
+                        <!-- Tier label -->
+                        <p class="pricing-tier">Starter</p>
+
+                        <!-- Price display — JS drives the odometer -->
+                        <div class="pricing-price-row">
+                            <span class="pricing-currency">₹</span>
+                            <span class="pricing-amount" id="priceStarter" data-monthly="8000"
+                                data-project="15000">15,000</span>
+                            <span class="pricing-cadence" id="cadenceStarter">/project</span>
+                        </div>
+
+                        <!-- Feature list — each li gets stagger-revealed -->
+                        <ul class="pricing-features">
+                            <li class="pf-item"><span class="pf-check" aria-hidden="true">✦</span>Landing Page</li>
+                            <li class="pf-item"><span class="pf-check" aria-hidden="true">✦</span>Basic SEO Setup</li>
+                            <li class="pf-item"><span class="pf-check" aria-hidden="true">✦</span>2 Design Revisions
+                            </li>
+                            <li class="pf-item"><span class="pf-check" aria-hidden="true">✦</span>30-Day Support</li>
+                        </ul>
+
+                        <a href="../contact/" class="pricing-cta btn btn--ghost">Get Started →</a>
+                    </div>
+                </div>
+
+                <!-- GROWTH (featured / most popular) -->
+                <div class="pricing-card pricing-card--popular" id="pricGrowth" data-plan="growth">
+
+                    <!-- Badge is a direct child of the OUTER wrapper (overflow:visible),
+                         NOT inside the inner card (overflow:hidden).
+                         translate(-50%, -50%) at top:0 straddles the border. -->
+                    <div class="pricing-popular-badge" id="pricingPopularBadge">Most Popular</div>
+
+                    <div class="pricing-card__inner glass-card pricing-card__inner--popular">
+
+                        <!-- Shimmer top-edge highlight -->
+                        <div class="pricing-card__shimmer" aria-hidden="true"></div>
+
+                        <p class="pricing-tier pricing-tier--light">Growth</p>
+
+                        <div class="pricing-price-row">
+                            <span class="pricing-currency pricing-currency--light">₹</span>
+                            <span class="pricing-amount pricing-amount--light" id="priceGrowth" data-monthly="25000"
+                                data-project="45000">45,000</span>
+                            <span class="pricing-cadence pricing-cadence--light" id="cadenceGrowth">/project</span>
+                        </div>
+
+                        <ul class="pricing-features">
+                            <li class="pf-item pf-item--light"><span class="pf-check pf-check--light"
+                                    aria-hidden="true">✦</span>Multi-Page Website</li>
+                            <li class="pf-item pf-item--light"><span class="pf-check pf-check--light"
+                                    aria-hidden="true">✦</span>Full SEO &amp; Analytics</li>
+                            <li class="pf-item pf-item--light"><span class="pf-check pf-check--light"
+                                    aria-hidden="true">✦</span>Social Media Strategy</li>
+                            <li class="pf-item pf-item--light"><span class="pf-check pf-check--light"
+                                    aria-hidden="true">✦</span>5 Design Revisions</li>
+                            <li class="pf-item pf-item--light"><span class="pf-check pf-check--light"
+                                    aria-hidden="true">✦</span>90-Day Support</li>
+                        </ul>
+
+                        <a href="../contact/" class="pricing-cta pricing-cta--popular btn btn--primary">Get Started
+                            →</a>
+                    </div>
+                </div>
+
+                <!-- ENTERPRISE -->
+                <div class="pricing-card" id="pricEnterprise" data-plan="enterprise">
+                    <div class="pricing-card__inner glass-card">
+                        <p class="pricing-tier">Enterprise</p>
+
+                        <div class="pricing-price-row">
+                            <span class="pricing-amount pricing-amount--custom" id="priceEnterprise">Custom</span>
+                        </div>
+
+                        <ul class="pricing-features">
+                            <li class="pf-item"><span class="pf-check" aria-hidden="true">✦</span>Full Digital Ecosystem
+                            </li>
+                            <li class="pf-item"><span class="pf-check" aria-hidden="true">✦</span>Dedicated Team</li>
+                            <li class="pf-item"><span class="pf-check" aria-hidden="true">✦</span>End-to-End Marketing
+                            </li>
+                            <li class="pf-item"><span class="pf-check" aria-hidden="true">✦</span>Unlimited Revisions
+                            </li>
+                            <li class="pf-item"><span class="pf-check" aria-hidden="true">✦</span>Priority Support</li>
+                        </ul>
+
+                        <a href="../contact/" class="pricing-cta btn btn--ghost">Contact Us →</a>
+                    </div>
+                </div>
+
+            </div><!-- /pricing-grid -->
+
+        </div><!-- /container -->
+    </section><!-- /pricing-teaser -->
+
+    <!-- ======================================================
+         GRAVITY CORE CTA — 6th Section (Services Page)
+         Desktop : Magnetic cursor pull (150px radius, snappy 0.3s)
+         Mobile  : CSS breathing-pulse replaces magnet (no hover)
+         On click: Circular screen-fill ripple -> contact.html
+    ====================================================== -->
+    <section id="final-cta" class="gc-section" aria-label="Ready to Win Online - Call to Action">
+
+        <!-- Decorative ambient blobs (CSS-only, no JS) -->
+        <div class="gc-blob gc-blob--left" aria-hidden="true"></div>
+        <div class="gc-blob gc-blob--right" aria-hidden="true"></div>
+
+        <div class="gc-wrapper">
+
+            <!-- Eyebrow pill -->
+            <p class="gc-eyebrow">
+                <span class="gc-eyebrow__dot" aria-hidden="true"></span>
+                Let&#8217;s Build Together
+            </p>
+
+            <!-- Main heading -->
+            <h2 class="gc-title">
+                Ready to <span class="gc-accent-italic">Win</span> Online?
+            </h2>
+
+            <!-- Sub-copy -->
+            <p class="gc-desc">
+                Premium digital experiences crafted for growth,&nbsp;speed, and lasting impact.
+            </p>
+
+            <!-- Magnetic zone — JS watches mouse within this wrapper on desktop -->
+            <div class="gc-magnetic-area" id="gc-magnetic-area">
+                <button class="gc-btn" id="gc-btn" onclick="gcNavigateToContact(event)"
+                    aria-label="Start Your Project - navigate to contact page">
+                    <span class="gc-btn__text">Start Your Project</span>
+                    <span class="gc-btn__icon" aria-hidden="true">&#8594;</span>
+                    <!-- JS appends .gc-ripple-circle spans here on click -->
+                    <span class="gc-ripple-overlay" id="gc-ripple-overlay" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <!-- Trust micro-copy -->
+            <p class="gc-trust">
+                <span>&#10022; No long-term contracts</span>
+                <span>&#10022; Results in 30 days</span>
+                <span>&#10022; 100% satisfaction guaranteed</span>
+            </p>
+
+        </div><!-- /gc-wrapper -->
+
+        <!-- Full-screen expander that fills viewport before redirect -->
+        <div class="gc-screen-ripple" id="gc-screen-ripple" aria-hidden="true"></div>
+
+    </section><!-- /final-cta -->
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/services.js"></script>
+    <script src="../scripts/pricing-animate.js"></script>
+    <script src="../scripts/footer-loader.js"></script>
+</body>
+
+</html>

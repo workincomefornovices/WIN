@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us — WIN Digital Agency</title>
+    <meta name="description"
+        content="Meet the team behind WIN — a passionate crew of designers, developers, and marketers dedicated to digital excellence." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/navbar.css" />
+    <link rel="stylesheet" href="../styles/about.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+</head>
+
+<body class="page-about">
+
+    <div id="cursor-ring" aria-hidden="true"></div>
+    <div id="cursor-dot" aria-hidden="true"></div>
+
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar__inner">
+            <div class="navbar__brand">
+                <a href="../home/" class="navbar__logo" aria-label="WIN Home" style="display: flex; align-items: center; gap: 12px; pointer-events: auto;">
+            <img src="../src-images/common-images/win-logo.png" alt="WIN Logo" style="height: 48px; width: auto; aspect-ratio: auto; margin-right: -4px;">
+            <img src="../src-images/common-images/win-name.png" alt="WIN Wordmark" style="height: 22px; width: auto; aspect-ratio: auto;">
+          </a>
+            </div>
+            <div class="navbar__menu">
+                <ul class="navbar__links" id="navLinks" role="list">
+                    <li><a href="../home/" class="nav-link">Home</a></li>
+                    <li><a href="../about/" class="nav-link active" aria-current="page">About</a></li>
+                    <li><a href="../services/" class="nav-link">Services</a></li>
+                    <li><a href="../testimonials/" class="nav-link">Testimonials</a></li>
+                    <li><a href="../contact/" class="nav-link">Contact</a></li>
+                    <li class="navbar__drawer-cta-wrap">
+                        <a href="../contact/" class="navbar__drawer-cta">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar__actions">
+                <a href="../contact/" class="navbar__cta" id="navCta">Get Started</a>
+                <button class="navbar__hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="page-transition" aria-hidden="true">
+        <div class="pt-panel pt-panel--1"></div>
+        <div class="pt-panel pt-panel--2"></div>
+        <div class="pt-panel pt-panel--3"></div>
+    </div>
+
+    <!-- SPATIAL HERO -->
+    <section class="about-spatial-hero" id="aboutHero">
+        <canvas id="heroCanvas" class="about-hero-canvas"></canvas>
+
+        <div class="container about-hero-overlay">
+            <div class="about-hero-text">
+                <p class="about-eyebrow" id="aHeroEyebrow">WHO WE ARE</p>
+
+                <h1 class="about-main-title" id="aHeroTitle">
+                    <span class="about-title-bold">Architects of</span><br>
+                    <span class="about-title-italic">Digital Destiny<span class="about-dot">.</span></span>
+                </h1>
+
+                <p class="about-sub-lead" id="aHeroSub">
+                    WIN — Work Income for Novices — was founded on a singular belief:
+                    that world-class digital ecosystems should be accessible to every
+                    ambitious creator, entrepreneur, and enterprise.
+                </p>
+            </div>
+        </div>
+
+        <div class="about-scroll-cue" aria-hidden="true">
+            <span class="about-scroll-text">SCROLL</span>
+            <div class="about-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- MISSION -->
+    <section class="mission-section" id="mission">
+        <div class="container">
+            <div class="mission-layout">
+                <div class="mission-text">
+                    <p class="section-label">Our Purpose</p>
+                    <h2 class="section-title">We Exist to<br /><em>Empower</em></h2>
+                    <p class="mission-body">
+                        WIN was born from a radical idea: that every ambitious novice deserves access to world-class
+                        digital expertise. We bridge the gap between bold ideas and real-world digital success — through
+                        craft, strategy, and relentless pursuit of excellence.
+                    </p>
+                    <p class="mission-body">
+                        From the first wireframe to the final launch, we treat every project as a masterpiece in
+                        progress. Our team doesn't just build websites — we architect digital futures.
+                    </p>
+                    <div class="mission-values">
+                        <div class="value-pill glass-card">🔬 Precision</div>
+                        <div class="value-pill glass-card">🚀 Innovation</div>
+                        <div class="value-pill glass-card">🤝 Integrity</div>
+                        <div class="value-pill glass-card">🌟 Excellence</div>
+                    </div>
+                </div>
+                <div class="mission-visual" data-elastic>
+                    <div class="mission-img-wrapper glass-card">
+                        <div class="mission-abstract" aria-hidden="true">
+                            <div class="abstract-ring ring-1"></div>
+                            <div class="abstract-ring ring-2"></div>
+                            <div class="abstract-ring ring-3"></div>
+                            <div class="abstract-dot"></div>
+                            <span class="abstract-text">WIN</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- NEURAL PROFILE STACK — MINDS BEHIND WIN -->
+    <section class="minds-section" id="meetTheMinds">
+        <div class="container">
+
+            <div class="minds-header">
+                <p class="section-label">Our Leadership</p>
+                <h2 class="section-title">The <em>Minds</em> Behind WIN</h2>
+            </div>
+
+            <div class="minds-row">
+
+                <!-- ── Manish / CEO ── -->
+                <div class="mind-unit" data-active="false" id="mindManish">
+                    <div class="mind-card">
+                        <div class="mind-avatar-ring">
+                            <div class="mind-avatar-initials">M</div>
+                        </div>
+                        <h3 class="mind-name">Manish Kattupalli</h3>
+                        <p class="mind-role">CEO</p>
+                        <span class="mind-hint">↗ Hover to explore</span>
+                    </div>
+
+                    <div class="mind-connector" aria-hidden="true">
+                        <svg class="mind-conn-svg" viewBox="0 0 20 64" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="connGradManish" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#6366f1" />
+                                    <stop offset="100%" stop-color="#06b6d4" />
+                                </linearGradient>
+                            </defs>
+                            <path class="mind-conn-path" d="M 10 0 L 10 64" stroke="url(#connGradManish)"
+                                stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="64"
+                                stroke-dashoffset="64" />
+                            <circle class="mind-conn-dot" cx="10" cy="64" r="3.5" fill="#06b6d4" opacity="0" />
+                        </svg>
+                    </div>
+
+                    <div class="mind-panel">
+                        <div class="mind-panel-inner">
+                            <p class="mind-panel-tag">● Profile Details</p>
+                            <h4 class="mind-panel-title">Chief Executive Officer</h4>
+                            <p class="mind-panel-bio">Leading WIN's vision, strategy, and digital accessibility for
+                                emerging entrepreneurs worldwide.</p>
+                            <div class="mind-detail-item">
+                                <span class="mind-detail-icon">👤</span>
+                                <div>
+                                    <p class="mind-detail-label">Role in Company</p>
+                                    <p class="mind-detail-val">Chief Executive Officer</p>
+                                </div>
+                            </div>
+                            <div class="mind-detail-item">
+                                <span class="mind-detail-icon">🚀</span>
+                                <div>
+                                    <p class="mind-detail-label">Projects Led</p>
+                                    <p class="mind-detail-val">4+ Projects <span class="mind-verified">✓
+                                            Verified</span></p>
+                                </div>
+                            </div>
+                            <div class="mind-detail-item">
+                                <span class="mind-detail-icon">🎯</span>
+                                <div>
+                                    <p class="mind-detail-label">Specialization</p>
+                                    <p class="mind-detail-val">Strategy &amp; Leadership</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── Akshya / Technical Director ── -->
+                <div class="mind-unit" data-active="false" id="mindAkshya">
+                    <div class="mind-card">
+                        <div class="mind-avatar-ring mind-avatar-ring--teal">
+                            <img src="../src-images/about-images/technical-director.png" alt="Akshya — Technical Director at WIN" class="mind-avatar-img"
+                                loading="lazy"
+                                onerror="this.style.display='none';this.parentNode.querySelector('.mind-avatar-fallback').style.display='flex'" />
+                            <div class="mind-avatar-fallback mind-avatar-initials" style="display:none">A</div>
+                        </div>
+                        <h3 class="mind-name">Naga Akshaya Balineni</h3>
+                        <p class="mind-role">Technical Director</p>
+                        <span class="mind-hint">↗ Hover to explore</span>
+                    </div>
+
+                    <div class="mind-connector" aria-hidden="true">
+                        <svg class="mind-conn-svg" viewBox="0 0 20 64" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="connGradAkshya" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#6366f1" />
+                                    <stop offset="100%" stop-color="#06b6d4" />
+                                </linearGradient>
+                            </defs>
+                            <path class="mind-conn-path" d="M 10 0 L 10 64" stroke="url(#connGradAkshya)"
+                                stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="64"
+                                stroke-dashoffset="64" />
+                            <circle class="mind-conn-dot" cx="10" cy="64" r="3.5" fill="#06b6d4" opacity="0" />
+                        </svg>
+                    </div>
+
+                    <div class="mind-panel">
+                        <div class="mind-panel-inner">
+                            <p class="mind-panel-tag">● Profile Details</p>
+                            <h4 class="mind-panel-title">Technical Director</h4>
+                            <p class="mind-panel-bio">Architecting WIN's technical vision with a passion for clean code,
+                                scalable systems, and cutting-edge web technologies.</p>
+                            <div class="mind-detail-item">
+                                <span class="mind-detail-icon">⚙️</span>
+                                <div>
+                                    <p class="mind-detail-label">Role in Company</p>
+                                    <p class="mind-detail-val">Technical Director</p>
+                                </div>
+                            </div>
+                            <div class="mind-detail-item">
+                                <span class="mind-detail-icon">🚀</span>
+                                <div>
+                                    <p class="mind-detail-label">Projects Led</p>
+                                    <p class="mind-detail-val">4+ Projects <span class="mind-verified">✓
+                                            Verified</span></p>
+                                </div>
+                            </div>
+                            <div class="mind-detail-item">
+                                <span class="mind-detail-icon">💻</span>
+                                <div>
+                                    <p class="mind-detail-label">Specialization</p>
+                                    <p class="mind-detail-val">Full-Stack &amp; AI Systems</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── Sujeeth / Creative Director ── -->
+                <div class="mind-unit" data-active="false" id="mindSujeeth">
+                    <div class="mind-card">
+                        <div class="mind-avatar-ring mind-avatar-ring--purple">
+                            <img src="../src-images/about-images/operational-director.jpg" alt="Sujeeth — Creative Director" class="mind-avatar-img" style="object-fit: cover; aspect-ratio: 1/1;" />
+                        </div>
+                        <h3 class="mind-name">Sujeeth Kumar Kalmela</h3>
+                        <p class="mind-role">Creative Director</p>
+                        <span class="mind-hint">↗ Hover to explore</span>
+                    </div>
+
+                    <div class="mind-connector" aria-hidden="true">
+                        <svg class="mind-conn-svg" viewBox="0 0 20 64" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="connGradSujeeth" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#6366f1" />
+                                    <stop offset="100%" stop-color="#06b6d4" />
+                                </linearGradient>
+                            </defs>
+                            <path class="mind-conn-path" d="M 10 0 L 10 64" stroke="url(#connGradSujeeth)"
+                                stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="64"
+                                stroke-dashoffset="64" />
+                            <circle class="mind-conn-dot" cx="10" cy="64" r="3.5" fill="#06b6d4" opacity="0" />
+                        </svg>
+                    </div>
+
+                    <div class="mind-panel">
+                        <div class="mind-panel-inner">
+                            <p class="mind-panel-tag">● Profile Details</p>
+                            <h4 class="mind-panel-title">Creative Director</h4>
+                            <p class="mind-panel-bio">Shaping WIN's visual identity and brand experience — where
+                                precision design meets bold, purposeful creativity.</p>
+                            <div class="mind-detail-item">
+                                <span class="mind-detail-icon">🎨</span>
+                                <div>
+                                    <p class="mind-detail-label">Role in Company</p>
+                                    <p class="mind-detail-val">Creative Director</p>
+                                </div>
+                            </div>
+                            <div class="mind-detail-item">
+                                <span class="mind-detail-icon">🚀</span>
+                                <div>
+                                    <p class="mind-detail-label">Projects Led</p>
+                                    <p class="mind-detail-val">4+ Projects <span class="mind-verified">✓
+                                            Verified</span></p>
+                                </div>
+                            </div>
+                            <div class="mind-detail-item">
+                                <span class="mind-detail-icon">✨</span>
+                                <div>
+                                    <p class="mind-detail-label">Specialization</p>
+                                    <p class="mind-detail-val">UI/UX &amp; Brand Identity</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /minds-row -->
+        </div><!-- /container -->
+    </section>
+
+
+    <!-- Section 4: Our Journey — CardSwap White Theme -->
+    <section class="journey-section" id="journeySection">
+        <div class="journey-container">
+
+            <!-- ══ 2-COLUMN LAYOUT ══ -->
+            <div class="journey-body-grid">
+
+                <!-- ── LEFT COLUMN: Fixed Text ── -->
+                <div class="journey-text-col" id="journeyTextCol">
+                    <p class="journey-eyebrow" id="journeyEyebrow">Our Journey</p>
+                    <h2 class="journey-heading" id="journeyHeading">
+                        From Vision<br /><em>to Victory</em>
+                    </h2>
+                    <p class="journey-subtext">Four milestones that shaped WIN into the full-service digital powerhouse it is today.</p>
+
+                    <!-- Progress dots -->
+                    <div class="journey-prog-dots" id="journeyProgDots" aria-label="Milestone progress">
+                        <button class="journey-prog-dot journey-prog-dot--active" data-target="0" aria-label="2022 milestone"></button>
+                        <button class="journey-prog-dot" data-target="1" aria-label="2023 milestone"></button>
+                        <button class="journey-prog-dot" data-target="2" aria-label="2024 milestone"></button>
+                        <button class="journey-prog-dot" data-target="3" aria-label="2025 milestone"></button>
+                    </div>
+
+                    <!-- Active milestone label -->
+                    <div class="journey-active-label" id="journeyActiveLabel">
+                        <span class="journey-active-year" id="journeyActiveYear">2022</span>
+                        <span class="journey-active-title" id="journeyActiveTitle">The Idea is Born</span>
+                    </div>
+                </div>
+
+                <!-- ── RIGHT COLUMN: GSAP CardSwap Stack ── -->
+                <div class="journey-right-col" id="journeyRightCol">
+                    <div class="cardswap-stage" id="cardswapStage"
+                         role="region"
+                         aria-label="WIN milestone cards — click to advance">
+
+                        <!-- Card 0 — 2022 (top of stack = index 0) -->
+                        <div class="cs-card cs-card--0" data-cs-index="0" data-cs-year="2022" data-cs-title="The Idea is Born" role="article">
+                            <div class="cs-card-accent cs-accent--indigo"></div>
+                            <div class="cs-card-inner">
+                                <span class="cs-year-badge">2022</span>
+                                <h3 class="cs-card-title">The Idea is Born</h3>
+                                <p class="cs-card-desc">WIN is conceived with a clear mission: democratize digital excellence for aspiring entrepreneurs and novice businesses worldwide.</p>
+                                <div class="cs-card-footer">
+                                    <span class="cs-brand">WIN / MILESTONES</span>
+                                    <div class="cs-arrow-btn" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 1 — 2023 -->
+                        <div class="cs-card cs-card--1" data-cs-index="1" data-cs-year="2023" data-cs-title="First 20 Clients" role="article">
+                            <div class="cs-card-accent cs-accent--sky"></div>
+                            <div class="cs-card-inner">
+                                <span class="cs-year-badge">2023</span>
+                                <h3 class="cs-card-title">First 20 Clients</h3>
+                                <p class="cs-card-desc">We deliver 20 successful projects, earning our first wave of loyal clients and 5-star reviews across the board.</p>
+                                <div class="cs-card-footer">
+                                    <span class="cs-brand">WIN / MILESTONES</span>
+                                    <div class="cs-arrow-btn" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 — 2024 -->
+                        <div class="cs-card cs-card--2" data-cs-index="2" data-cs-year="2024" data-cs-title="Scaling Excellence" role="article">
+                            <div class="cs-card-accent cs-accent--violet"></div>
+                            <div class="cs-card-inner">
+                                <span class="cs-year-badge">2024</span>
+                                <h3 class="cs-card-title">Scaling Excellence</h3>
+                                <p class="cs-card-desc">Expansion into full-service digital marketing and UI/UX specialized squads. WIN becomes a true agency powerhouse.</p>
+                                <div class="cs-card-footer">
+                                    <span class="cs-brand">WIN / MILESTONES</span>
+                                    <div class="cs-arrow-btn" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 — 2025 -->
+                        <div class="cs-card cs-card--3" data-cs-index="3" data-cs-year="2025" data-cs-title="The Future of WIN" role="article">
+                            <div class="cs-card-accent cs-accent--teal"></div>
+                            <div class="cs-card-inner">
+                                <span class="cs-year-badge">2025</span>
+                                <h3 class="cs-card-title">The Future of WIN</h3>
+                                <p class="cs-card-desc">Launching the AI-integrated "WIN-Work" placement portal for students — bridging talent with opportunity at scale.</p>
+                                <div class="cs-card-footer">
+                                    <span class="cs-brand">WIN / MILESTONES</span>
+                                    <div class="cs-arrow-btn" aria-hidden="true">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /cardswap-stage -->
+                </div><!-- /right column -->
+
+            </div><!-- /journey-body-grid -->
+        </div><!-- /journey-container -->
+    </section>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/about.js"></script>
+    <script src="../scripts/footer-loader.js"></script>
+</body>
+
+</html>

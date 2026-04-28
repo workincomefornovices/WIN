@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WIN — Work Income for Novices | Home</title>
+  <meta name="description"
+    content="WIN (Work Income for Novices) — A premium digital agency delivering web development, digital marketing, and graphic design solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/global.css" />
+  <link rel="stylesheet" href="../styles/navbar.css" />
+  <link rel="stylesheet" href="../styles/home.css" />
+  <link rel="stylesheet" href="../styles/footer.css" />
+  <link rel="stylesheet" href="../styles/preloader.css" />
+</head>
+
+<body class="page-home">
+
+  <!-- ════ PRELOADER ════ -->
+  <div id="loader">
+    <div class="loader-content">
+      <h1 class="loader-logo">
+        <span class="loader-w">W</span>IN
+      </h1>
+      <div class="progress-container">
+        <div class="progress-bar" id="bar"></div>
+      </div>
+      <p id="percent">0%</p>
+    </div>
+    <div class="pl-blob pl-blob--a"></div>
+    <div class="pl-blob pl-blob--b"></div>
+  </div>
+
+  <!-- ════ MAIN CONTENT START (initially hidden) ════ -->
+  <div id="main-content">
+
+    <!-- ── CURSOR ── -->
+    <div id="cursor-ring" aria-hidden="true"></div>
+    <div id="cursor-dot" aria-hidden="true"></div>
+
+    <!-- ── NAVBAR ── -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar__inner">
+        <div class="navbar__brand">
+          <a href="./home/" class="navbar__logo" aria-label="WIN Home" style="display: flex; align-items: center; gap: 12px; pointer-events: auto;">
+            <img src="./src-images/common-images/win-logo.png" alt="WIN Logo" style="height: 48px; width: auto; aspect-ratio: auto; margin-right: -4px;">
+            <img src="./src-images/common-images/win-name.png" alt="WIN Wordmark" style="height: 22px; width: auto; aspect-ratio: auto;">
+          </a>
+        </div>
+        <div class="navbar__menu">
+          <ul class="navbar__links" id="navLinks" role="list">
+            <li><a href="../home/" class="nav-link active" aria-current="page">Home</a></li>
+            <li><a href="../about/" class="nav-link">About</a></li>
+            <li><a href="../services/" class="nav-link">Services</a></li>
+            <li><a href="../testimonials/" class="nav-link">Testimonials</a></li>
+            <li><a href="../contact/" class="nav-link">Contact</a></li>
+            <li class="navbar__drawer-cta-wrap">
+              <a href="../contact/" class="navbar__drawer-cta">Get Started</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar__actions">
+          <a href="../contact/" class="navbar__cta" id="navCta">Get Started</a>
+          <button class="navbar__hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ── PAGE TRANSITION OVERLAY ── -->
+    <!-- Note: on home page the preloader handles the first-load reveal.
+       The .pt-panel wipe is suppressed via .no-pt-home class -->
+    <div id="page-transition" aria-hidden="true" class="pt-home-suppressed">
+      <div class="pt-panel pt-panel--1"></div>
+      <div class="pt-panel pt-panel--2"></div>
+      <div class="pt-panel pt-panel--3"></div>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="hero" id="hero">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+      <!-- Three.js mount -->
+      <div id="threejs-mount" aria-hidden="true"></div>
+
+      <div class="hero-container">
+        <div class="hero-content">
+          <p class="hero-eyebrow reveal-text" data-delay="0">Work Income for Novices</p>
+          <h1 class="hero-title">
+            <span class="hero-line reveal-line" data-delay="0.1">Shape Your</span>
+            <span class="hero-line reveal-line italic" data-delay="0.25">Digital</span>
+            <span class="hero-line reveal-line" data-delay="0.4">Future</span>
+          </h1>
+          <p class="hero-sub reveal-text" data-delay="0.6">
+            Precision-crafted web experiences, marketing systems, and visual identities<br />
+            built to convert, captivate, and grow.
+          </p>
+          <div class="hero-actions reveal-text" data-delay="0.8">
+            <a href="../services/" class="btn btn--primary" id="heroExplore">Explore Services</a>
+            <a href="../about/" class="btn btn--ghost" id="heroStory">Our Story</a>
+          </div>
+        </div>
+
+        <!-- Floating glass orb (Three.js) -->
+        <div class="hero-orb-wrapper" id="heroOrb" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-label">Scroll</span>
+      </div>
+    </section>
+
+    <!-- ── MARQUEE STRIP ── -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Web Development</span><span aria-hidden="true">·</span>
+        <span>Digital Marketing</span><span aria-hidden="true">·</span>
+        <span>Graphic Design</span><span aria-hidden="true">·</span>
+        <span>Brand Identity</span><span aria-hidden="true">·</span>
+        <span>SEO Strategy</span><span aria-hidden="true">·</span>
+        <span>UI/UX Design</span><span aria-hidden="true">·</span>
+        <span>Web Development</span><span aria-hidden="true">·</span>
+        <span>Digital Marketing</span><span aria-hidden="true">·</span>
+        <span>Graphic Design</span><span aria-hidden="true">·</span>
+        <span>Brand Identity</span><span aria-hidden="true">·</span>
+        <span>SEO Strategy</span><span aria-hidden="true">·</span>
+        <span>UI/UX Design</span><span aria-hidden="true">·</span>
+      </div>
+    </div>
+
+    <!-- ── KINETIC FIVE PILLARS ── -->
+    <section class="kinetic-pillars-section" id="kineticPillars">
+      <div class="kp-bg-grid" aria-hidden="true"></div>
+
+      <div class="pillars-track" id="pillarsTrack">
+
+        <div class="kinetic-header" id="kineticHeader">
+          <p class="pillars-eyebrow">SERVICES</p>
+          <h2 class="pillars-title">
+            The Five Pillars of<br>
+            <em>Digital Mastery</em>
+          </h2>
+        </div>
+
+        <div class="kinetic-cards-container" id="cardsContainer">
+
+          <a href="../services/" class="kinetic-card" id="cardPillar1">
+            <div class="kinetic-card__icon">⬡</div>
+            <h3 class="kinetic-card__name">Digital<br>Architecture</h3>
+            <p class="kinetic-card__desc">Engineering scalable digital infrastructures built to evolve.</p>
+            <span class="kinetic-card__link">Discover Services →</span>
+          </a>
+
+          <a href="../services/" class="kinetic-card" id="cardPillar2">
+            <div class="kinetic-card__icon">⚡</div>
+            <h3 class="kinetic-card__name">Strategic<br>Innovation</h3>
+            <p class="kinetic-card__desc">Forging disruptive pathways to market leadership.</p>
+            <span class="kinetic-card__link">Discover Services →</span>
+          </a>
+
+          <a href="../services/" class="kinetic-card" id="cardPillar3">
+            <div class="kinetic-card__icon">✦</div>
+            <h3 class="kinetic-card__name">Experience<br>Design</h3>
+            <p class="kinetic-card__desc">Crafting seamless journeys that resonate and convert.</p>
+            <span class="kinetic-card__link">Discover Services →</span>
+          </a>
+
+          <a href="../services/" class="kinetic-card" id="cardPillar4">
+            <div class="kinetic-card__icon">🛠</div>
+            <h3 class="kinetic-card__name">Product<br>Development</h3>
+            <p class="kinetic-card__desc">Accelerating ideas into robust, user-centric software.</p>
+            <span class="kinetic-card__link">Discover Services →</span>
+          </a>
+
+          <a href="../services/" class="kinetic-card" id="cardPillar5">
+            <div class="kinetic-card__icon">📈</div>
+            <h3 class="kinetic-card__name">Growth<br>Marketing</h3>
+            <p class="kinetic-card__desc">Amplifying reach and optimizing revenue channels.</p>
+            <span class="kinetic-card__link">Discover Services →</span>
+          </a>
+
+        </div><!-- /kinetic-cards-container -->
+      </div><!-- /pillars-track -->
+    </section>
+
+
+
+    <!-- ── PROCESS — HORIZONTAL SCROLL PIN ── -->
+    <section class="process-horizontal-wrap" id="processSection" aria-label="Our process">
+
+      <!-- Thin scroll-progress bar at the top of the pinned frame -->
+      <div class="process-progress-bar" id="processProgressBar" aria-hidden="true">
+        <div class="process-progress-fill" id="processProgressFill"></div>
+      </div>
+
+      <div class="process-sticky-limit">
+
+        <!-- Section header — stays fixed while track scrolls -->
+        <div class="container process-header-wrap">
+          <div class="process-header">
+            <div class="process-eyebrow-row">
+              <span class="process-eyebrow-line"></span>
+              <p class="process-eyebrow-label">HOW WE WORK</p>
+            </div>
+            <h2 class="process-main-title">Our Proven <br><em>Process.</em></h2>
+          </div>
+
+          <!-- Step dots — highlight active card -->
+          <div class="process-step-dots" id="processStepDots" aria-hidden="true">
+            <span class="step-dot step-dot--active" data-step="0"></span>
+            <span class="step-dot" data-step="1"></span>
+            <span class="step-dot" data-step="2"></span>
+            <span class="step-dot" data-step="3"></span>
+          </div>
+        </div>
+
+        <!-- The moveable track -->
+        <div class="process-track" id="processTrack">
+
+          <div class="process-card" id="procCardH1">
+            <div class="process-card__inner">
+              <span class="card-num" aria-hidden="true">01</span>
+              <div class="card-body">
+                <h3>Discover</h3>
+                <p>Deep-dive research into your brand, audience, and competitive landscape to uncover the real
+                  opportunities.</p>
+                <span class="card-arrow" aria-hidden="true">→</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-card" id="procCardH2">
+            <div class="process-card__inner">
+              <span class="card-num" aria-hidden="true">02</span>
+              <div class="card-body">
+                <h3>Strategize</h3>
+                <p>Blueprint a tailored digital strategy aligned with your growth goals, timelines, and budget
+                  constraints.</p>
+                <span class="card-arrow" aria-hidden="true">→</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-card" id="procCardH3">
+            <div class="process-card__inner">
+              <span class="card-num" aria-hidden="true">03</span>
+              <div class="card-body">
+                <h3>Create</h3>
+                <p>Craft pixel-perfect, conversion-focused design and development that elevates your brand above the
+                  noise.</p>
+                <span class="card-arrow" aria-hidden="true">→</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-card" id="procCardH4">
+            <div class="process-card__inner">
+              <span class="card-num" aria-hidden="true">04</span>
+              <div class="card-body">
+                <h3>Launch &amp; Scale</h3>
+                <p>Deploy, measure, and continuously optimize for peak performance — turning launch day into a growth
+                  engine.</p>
+                <span class="card-arrow" aria-hidden="true">→</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /process-track -->
+
+        <!-- Drag hint — fades out after first interaction -->
+        <div class="process-drag-hint" id="processDragHint" aria-hidden="true">
+          <span class="drag-hint__line"></span>
+          <span class="drag-hint__label">scroll to explore</span>
+          <span class="drag-hint__line"></span>
+        </div>
+
+      </div><!-- /process-sticky-limit -->
+    </section><!-- /process-horizontal-wrap -->
+
+
+
+
+  </div><!-- /main-content -->
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/loaders/GLTFLoader.js"></script>
+  
+  <script src="../scripts/global.js"></script>
+  <script src="../scripts/kinetic.js"></script>
+  <script src="../scripts/home.js"></script>
+  <script src="../scripts/footer-loader.js"></script>
+  <!-- Preloader MUST be last — it references DOM elements built by other scripts -->
+  <script src="../scripts/loader.js"></script>
+</body>
+
+</html>

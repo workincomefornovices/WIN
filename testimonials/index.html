@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonials — WIN Digital Agency</title>
+    <meta name="description"
+        content="Hear what our clients say about WIN — real stories of digital transformation and growth." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/navbar.css" />
+    <link rel="stylesheet" href="../styles/testimonials.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+</head>
+
+<body class="page-testimonials">
+    <div id="cursor-ring" aria-hidden="true"></div>
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar__inner">
+            <div class="navbar__brand">
+                <a href="../home/" class="navbar__logo" aria-label="WIN Home" style="display: flex; align-items: center; gap: 12px; pointer-events: auto;">
+            <img src="../src-images/common-images/win-logo.png" alt="WIN Logo" style="height: 48px; width: auto; aspect-ratio: auto; margin-right: -4px;">
+            <img src="../src-images/common-images/win-name.png" alt="WIN Wordmark" style="height: 22px; width: auto; aspect-ratio: auto;">
+          </a>
+            </div>
+            <div class="navbar__menu">
+                <ul class="navbar__links" id="navLinks" role="list">
+                    <li><a href="../home/" class="nav-link">Home</a></li>
+                    <li><a href="../about/" class="nav-link">About</a></li>
+                    <li><a href="../services/" class="nav-link">Services</a></li>
+                    <li><a href="../testimonials/" class="nav-link active" aria-current="page">Testimonials</a></li>
+                    <li><a href="../contact/" class="nav-link">Contact</a></li>
+                    <li class="navbar__drawer-cta-wrap">
+                        <a href="../contact/" class="navbar__drawer-cta">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar__actions">
+                <a href="../contact/" class="navbar__cta" id="navCta">Get Started</a>
+                <button class="navbar__hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="page-transition" aria-hidden="true">
+        <div class="pt-panel pt-panel--1"></div>
+        <div class="pt-panel pt-panel--2"></div>
+        <div class="pt-panel pt-panel--3"></div>
+    </div>
+
+
+    <!-- ══ PROFESSIONAL AUTHORITY HERO ══ -->
+    <section class="testi-orbit-hero" id="testiHero" aria-label="Global Specialist Network">
+
+        <!-- Subtle mesh background -->
+        <div class="orbit-hero__bg" aria-hidden="true">
+            <div class="ohb-blob ohb-blob--a"></div>
+            <div class="ohb-blob ohb-blob--b"></div>
+            <div class="ohb-grid"></div>
+        </div>
+
+        <div class="container orbit-hero__grid">
+
+            <!-- ── LEFT: Content ── -->
+            <div class="orbit-hero__content">
+
+                <!-- Status pill -->
+                <div class="orbit-status-pill" id="ohStatusPill">
+                    <span class="orbit-status-dot"></span>Stories Live
+                </div>
+
+                <!-- Headline -->
+                <h1 class="orbit-hero__headline" id="ohHeadline">
+                    Trusted by<br>
+                    <span class="orbit-hero__accent">Healthcare Professionals</span><br>
+                    Worldwide
+                </h1>
+
+                <!-- Sub-copy -->
+                <p class="orbit-hero__sub" id="ohSub">
+                    Real stories from doctors and teams using our AI-powered
+                    system every day to deliver faster, smarter patient care.
+                </p>
+
+            </div><!-- /content -->
+
+            <!-- ── RIGHT: Living Testimonial Stack ── -->
+            <div class="lts-wrap" id="ohStageWrap" aria-label="Testimonials from healthcare professionals">
+
+                <!-- Floating ambient elements -->
+                <div class="lts-ambient" aria-hidden="true">
+                    <div class="lts-ambient__ring lts-ambient__ring--a"></div>
+                    <div class="lts-ambient__ring lts-ambient__ring--b"></div>
+                    <div class="lts-ambient__glow"></div>
+                </div>
+
+                <!-- Card Stack -->
+                <div class="lts-stack" id="ltsStack" aria-live="polite">
+
+                    <!-- Card 1 → Active on load -->
+                    <div class="lts-card" id="ltsCard0" data-index="0" role="article">
+                        <div class="lts-card__inner">
+                            <div class="lts-card__quote-icon" aria-hidden="true">“</div>
+                            <blockquote class="lts-card__text">
+                                The AI scribe saves me 90 minutes every shift. It captures everything
+                                during consultations so I can focus entirely on my patients.
+                            </blockquote>
+                            <div class="lts-card__author">
+                                <div class="lts-card__avatar lts-avatar--indigo" aria-hidden="true">DR</div>
+                                <div class="lts-card__meta">
+                                    <strong class="lts-card__name">Dr. Rahul Verma</strong>
+                                    <span class="lts-card__role">Senior Cardiologist, AIIMS Delhi</span>
+                                </div>
+                                <div class="lts-card__stars" aria-label="5 stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="lts-card" id="ltsCard1" data-index="1" role="article">
+                        <div class="lts-card__inner">
+                            <div class="lts-card__quote-icon" aria-hidden="true">“</div>
+                            <blockquote class="lts-card__text">
+                                Our prescription errors dropped by 67% in the first month. The system
+                                catches drug interactions I might have missed during a busy round.
+                            </blockquote>
+                            <div class="lts-card__author">
+                                <div class="lts-card__avatar lts-avatar--sky" aria-hidden="true">PK</div>
+                                <div class="lts-card__meta">
+                                    <strong class="lts-card__name">Dr. Priya Krishnan</strong>
+                                    <span class="lts-card__role">Chief Pharmacist, Apollo Hospitals</span>
+                                </div>
+                                <div class="lts-card__stars" aria-label="5 stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="lts-card" id="ltsCard2" data-index="2" role="article">
+                        <div class="lts-card__inner">
+                            <div class="lts-card__quote-icon" aria-hidden="true">“</div>
+                            <blockquote class="lts-card__text">
+                                Patient wait times are down 40%. The digitised intake flow and
+                                AI scheduling transformed our OPD from chaos to clockwork.
+                            </blockquote>
+                            <div class="lts-card__author">
+                                <div class="lts-card__avatar lts-avatar--emerald" aria-hidden="true">AM</div>
+                                <div class="lts-card__meta">
+                                    <strong class="lts-card__name">Ananya Mehta</strong>
+                                    <span class="lts-card__role">Hospital Administrator, Fortis Healthcare</span>
+                                </div>
+                                <div class="lts-card__stars" aria-label="5 stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="lts-card" id="ltsCard3" data-index="3" role="article">
+                        <div class="lts-card__inner">
+                            <div class="lts-card__quote-icon" aria-hidden="true">“</div>
+                            <blockquote class="lts-card__text">
+                                Dictating notes feels natural now. The voice recognition accuracy
+                                is remarkable even in a noisy ICU environment.
+                            </blockquote>
+                            <div class="lts-card__author">
+                                <div class="lts-card__avatar lts-avatar--violet" aria-hidden="true">SN</div>
+                                <div class="lts-card__meta">
+                                    <strong class="lts-card__name">Dr. Sanjay Nair</strong>
+                                    <span class="lts-card__role">ICU Specialist, Manipal Hospital</span>
+                                </div>
+                                <div class="lts-card__stars" aria-label="5 stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /lts-stack -->
+
+                <!-- Dot indicators -->
+                <div class="lts-dots" id="ltsDots" role="tablist" aria-label="Testimonial navigation">
+                    <button class="lts-dot lts-dot--active" id="ltsDot0" role="tab" aria-selected="true" aria-controls="ltsCard0" aria-label="Testimonial 1"></button>
+                    <button class="lts-dot" id="ltsDot1" role="tab" aria-selected="false" aria-controls="ltsCard1" aria-label="Testimonial 2"></button>
+                    <button class="lts-dot" id="ltsDot2" role="tab" aria-selected="false" aria-controls="ltsCard2" aria-label="Testimonial 3"></button>
+                    <button class="lts-dot" id="ltsDot3" role="tab" aria-selected="false" aria-controls="ltsCard3" aria-label="Testimonial 4"></button>
+                </div>
+
+            </div><!-- /lts-wrap -->
+
+
+
+        </div><!-- /grid -->
+
+        <div class="about-scroll-cue" aria-hidden="true">
+            <span class="about-scroll-text">SCROLL</span>
+            <div class="about-scroll-line"></div>
+        </div>
+    </section>
+
+
+    <section class="rating-bar">
+        <div class="container">
+            <div class="rating-inner glass-card">
+                <div class="rating-score"><span class="score-num">4.9</span>
+                    <div class="stars">★★★★★</div>
+                    <p>Average Rating</p>
+                </div>
+                <div class="rating-divider" aria-hidden="true"></div>
+                <div class="rating-stat"><span>120+</span>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="rating-divider" aria-hidden="true"></div>
+                <div class="rating-stat"><span>98%</span>
+                    <p>Would Recommend</p>
+                </div>
+                <div class="rating-divider" aria-hidden="true"></div>
+                <div class="rating-stat"><span>100%</span>
+                    <p>On-Time Delivery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ GLASS TRANSACTION GALLERY ══ -->
+    <section class="testi-glass-section" id="testiGlassSection">
+
+        <!-- Sticky viewport — cards float inside here -->
+        <div class="glass-viewport">
+
+            <!-- Section header (pinned top-left while scrolling) -->
+            <div class="glass-header">
+                <p class="glass-header__tag">The Impact</p>
+                <h2 class="glass-header__title">Global <em>Success Stories</em></h2>
+            </div>
+
+            <!-- CARD 1 — Web Development / Rahul Kumar -->
+            <div class="tgc" id="tgc1" data-speed="1.2" data-tilt="14" style="--gc-left:4%; --gc-top:50%;">
+                <div class="tgc__inner">
+                    <div class="tgc__badge">Web Development</div>
+                    <blockquote class="tgc__quote">
+                        "Working with WIN completely transformed our online presence. Our website
+                        now generates 3× more leads and the design is absolutely stunning."
+                    </blockquote>
+                    <footer class="tgc__foot">
+                        <div class="tgc__avatar">RK</div>
+                        <div class="tgc__meta">
+                            <strong>Rahul Kumar</strong>
+                            <span>CEO, TechVentures India</span>
+                        </div>
+                        <div class="tgc__stars">★★★★★</div>
+                    </footer>
+                </div>
+            </div>
+
+            <!-- CARD 2 — Digital Marketing / Priya Sharma -->
+            <div class="tgc" id="tgc2" data-speed="0.85" data-tilt="-12" style="--gc-left:54%; --gc-top:50%;">
+                <div class="tgc__inner">
+                    <div class="tgc__badge">Digital Marketing</div>
+                    <blockquote class="tgc__quote">
+                        "The digital marketing strategy WIN crafted was brilliant.
+                        In 3 months, revenue doubled. They don't just promise results — they deliver them."
+                    </blockquote>
+                    <footer class="tgc__foot">
+                        <div class="tgc__avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444);">PS</div>
+                        <div class="tgc__meta">
+                            <strong>Priya Sharma</strong>
+                            <span>Founder, StyleHouse Co.</span>
+                        </div>
+                        <div class="tgc__stars">★★★★★</div>
+                    </footer>
+                </div>
+            </div>
+
+            <!-- CARD 3 — Graphic Design / Arjun Mehta -->
+            <div class="tgc" id="tgc3" data-speed="1.45" data-tilt="18" style="--gc-left:22%; --gc-top:50%;">
+                <div class="tgc__inner">
+                    <div class="tgc__badge">Graphic Design</div>
+                    <blockquote class="tgc__quote">
+                        "The logo and brand identity WIN created is world-class.
+                        Every time I share it, people ask who designed it."
+                    </blockquote>
+                    <footer class="tgc__foot">
+                        <div class="tgc__avatar" style="background:linear-gradient(135deg,#8b5cf6,#6366f1);">AM</div>
+                        <div class="tgc__meta">
+                            <strong>Arjun Mehta</strong>
+                            <span>Co-Founder, NourishBox</span>
+                        </div>
+                        <div class="tgc__stars">★★★★★</div>
+                    </footer>
+                </div>
+            </div>
+
+            <!-- CARD 4 — Full Package / Neha Krishnan -->
+            <div class="tgc" id="tgc4" data-speed="1.05" data-tilt="-16" style="--gc-left:67%; --gc-top:50%;">
+                <div class="tgc__inner">
+                    <div class="tgc__badge">Full Package</div>
+                    <blockquote class="tgc__quote">
+                        "Strategic thinking combined with flawless execution.
+                        Our e-commerce hit ₹10L monthly revenue in 6 months."
+                    </blockquote>
+                    <footer class="tgc__foot">
+                        <div class="tgc__avatar" style="background:linear-gradient(135deg,#06b6d4,#0ea5e9);">NK</div>
+                        <div class="tgc__meta">
+                            <strong>Neha Krishnan</strong>
+                            <span>Director, EcoMart Retail</span>
+                        </div>
+                        <div class="tgc__stars">★★★★★</div>
+                    </footer>
+                </div>
+            </div>
+
+            <!-- CARD 5 — Digital Marketing / Vikram Reddy -->
+            <div class="tgc" id="tgc5" data-speed="1.3" data-tilt="10" style="--gc-left:37%; --gc-top:50%;">
+                <div class="tgc__inner">
+                    <div class="tgc__badge">SEO &amp; Marketing</div>
+                    <blockquote class="tgc__quote">
+                        "WIN's SEO work speaks for itself. We're ranking #1 for our top 5 keywords.
+                        Organic traffic increased by 600%."
+                    </blockquote>
+                    <footer class="tgc__foot">
+                        <div class="tgc__avatar" style="background:linear-gradient(135deg,#10b981,#06b6d4);">VR</div>
+                        <div class="tgc__meta">
+                            <strong>Vikram Reddy</strong>
+                            <span>Founder, LegalEase LLP</span>
+                        </div>
+                        <div class="tgc__stars">★★★★★</div>
+                    </footer>
+                </div>
+            </div>
+
+            <!-- CARD 6 — UI/UX Design / Sanya Singh -->
+            <div class="tgc" id="tgc6" data-speed="0.75" data-tilt="-8" style="--gc-left:77%; --gc-top:50%;">
+                <div class="tgc__inner">
+                    <div class="tgc__badge">UI/UX Design</div>
+                    <blockquote class="tgc__quote">
+                        "The mobile app UI/UX WIN designed was the best investment we've made.
+                        User retention jumped from 23% to 71% after the redesign."
+                    </blockquote>
+                    <footer class="tgc__foot">
+                        <div class="tgc__avatar" style="background:linear-gradient(135deg,#ec4899,#a855f7);">SS</div>
+                        <div class="tgc__meta">
+                            <strong>Sanya Singh</strong>
+                            <span>Product Lead, LearnQuick</span>
+                        </div>
+                        <div class="tgc__stars">★★★★★</div>
+                    </footer>
+                </div>
+            </div>
+
+            <!-- CARD 7 — Graphic Design / Dev Thakkar -->
+            <div class="tgc" id="tgc7" data-speed="1.55" data-tilt="20" style="--gc-left:12%; --gc-top:50%;">
+                <div class="tgc__inner">
+                    <div class="tgc__badge">Brand System</div>
+                    <blockquote class="tgc__quote">
+                        "WIN delivered our complete brand system — logo, website, social templates —
+                        in under 3 weeks. Quality was exceptional."
+                    </blockquote>
+                    <footer class="tgc__foot">
+                        <div class="tgc__avatar" style="background:linear-gradient(135deg,#f97316,#eab308);">DT</div>
+                        <div class="tgc__meta">
+                            <strong>Dev Thakkar</strong>
+                            <span>Owner, CraftedBrew Co.</span>
+                        </div>
+                        <div class="tgc__stars">★★★★★</div>
+                    </footer>
+                </div>
+            </div>
+
+            <!-- CARD 8 — Full Package / Meera Jain -->
+            <div class="tgc" id="tgc8" data-speed="0.95" data-tilt="-14" style="--gc-left:46%; --gc-top:50%;">
+                <div class="tgc__inner">
+                    <div class="tgc__badge">Full Package</div>
+                    <blockquote class="tgc__quote">
+                        "Five stars isn't enough. WIN rebuilt our failing website into a
+                        high-converting sales machine. Bounce rate dropped 60%, conversions tripled."
+                    </blockquote>
+                    <footer class="tgc__foot">
+                        <div class="tgc__avatar" style="background:linear-gradient(135deg,#6366f1,#38bdf8);">MJ</div>
+                        <div class="tgc__meta">
+                            <strong>Meera Jain</strong>
+                            <span>CMO, FinancePro Solutions</span>
+                        </div>
+                        <div class="tgc__stars">★★★★★</div>
+                    </footer>
+                </div>
+            </div>
+
+        </div><!-- /glass-viewport -->
+
+        <!-- Mobile swipe hint — shown only on mobile via CSS, hidden on PC -->
+        <div class="tgc-swipe-hint" aria-hidden="true">
+            <span class="tgc-swipe-hint__finger">👆</span>
+            <span class="tgc-swipe-hint__arrow">→</span>
+            <span class="tgc-swipe-hint__label">Swipe to explore</span>
+        </div>
+
+    </section><!-- /testi-glass-section -->
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <script src="../scripts/global.js"></script>
+    <script src="../scripts/testimonials.js"></script>
+    <script src="../scripts/stat-bar-animate.js"></script>
+    <script src="../scripts/footer-loader.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,752 @@
+/* ── CONTACT PAGE ── */
+
+/* ── HERO: ARCHITECTURAL GRID BACKGROUND ── */
+.contact-hero {
+    position: relative;
+    overflow: hidden;
+    background: #f5f8ff;           /* Light off-white — matches GLSL bgColor */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Override global section { padding-block } so the hero controls its own spacing */
+    padding-block: 0;
+}
+
+/* ── WebGL Cybernetic Grid mount — full-bleed behind all hero content ── */
+#cyberneticGridMount {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;  /* receives mouse/touch events for warp interaction */
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* ── HERO: SPLIT LAYOUT ── */
+.hero-split-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── HERO: LEFT CONTENT ── */
+.hero-content-left {
+    flex: 1;
+    max-width: 560px;
+}
+
+.eyebrow-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+
+.eyebrow-line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #6366f1, #818cf8);
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.hero-content-left .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    color: #6366f1;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* ── HERO: TITLE TYPOGRAPHY ── */
+.hero-main-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(3.2rem, 7.5vw, 5.5rem);
+    line-height: 0.9 !important;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    margin: 16px 0 24px;
+}
+
+.text-dark {
+    color: #0f172a;
+    display: block;
+    transform: translateY(20px);
+}
+
+.text-blue {
+    color: #6366f1;
+    display: block;
+}
+
+.dot {
+    color: #818cf8;
+}
+
+.hero-description {
+    color: #64748b;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+/* ── HERO: BADGE PILLS WITH GLASSMORPHISM ── */
+.hero-badges-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.badge-pill {
+    padding: 9px 20px;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #0f172a;
+    transition: transform var(--smooth-transition, 0.5s cubic-bezier(0.23, 1, 0.32, 1)),
+        box-shadow var(--smooth-transition, 0.5s cubic-bezier(0.23, 1, 0.32, 1));
+    will-change: transform;
+    cursor: default;
+}
+
+.badge-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.2);
+}
+
+.glass-frost {
+    background: rgba(255, 255, 255, 0.65);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* ── HERO: RIGHT VISUAL – ORB ── */
+.hero-visual-right {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spatial-orb-wrap {
+    position: relative;
+    width: 420px;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Concentric rings around the orb */
+.orb-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    pointer-events: none;
+}
+
+.orb-ring-outer {
+    width: 380px;
+    height: 380px;
+}
+
+.orb-ring-mid {
+    width: 280px;
+    height: 280px;
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+/* Main Glass Orb */
+.main-glass-orb {
+    position: relative;
+    width: 210px;
+    height: 210px;
+    background: rgba(255, 255, 255, 0.82);
+    -webkit-backdrop-filter: blur(28px);
+    backdrop-filter: blur(28px);
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    box-shadow:
+        0 25px 60px rgba(99, 102, 241, 0.18),
+        0 8px 30px rgba(129, 140, 248, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 1),
+        inset 0 -2px 8px rgba(99, 102, 241, 0.08);
+}
+
+.orb-logo-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    letter-spacing: 0.12em;
+    color: #6366f1;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 1px 3px rgba(99, 102, 241, 0.2);
+}
+
+.orb-inner-glow {
+    position: absolute;
+    inset: 15%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Floating Labels */
+.floating-label {
+    position: absolute;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #6366f1;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    padding: 5px 13px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+    white-space: nowrap;
+}
+
+.label-top {
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.label-right {
+    right: -5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.label-bottom {
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Orbital Particles */
+.orb-particle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #818cf8);
+    opacity: 0.55;
+}
+
+.p-tiny {
+    width: 6px;
+    height: 6px;
+}
+
+.p-small {
+    width: 10px;
+    height: 10px;
+}
+
+.p-medium {
+    width: 14px;
+    height: 14px;
+}
+
+.pos-top-right {
+    top: 20%;
+    right: 10%;
+}
+
+.pos-bottom-left {
+    bottom: 30%;
+    left: 5%;
+}
+
+.pos-mid-left {
+    top: 50%;
+    left: 18%;
+}
+
+/* ── HERO: SCROLL CUE ── */
+.hero-scroll-cue {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+}
+
+.hero-scroll-cue span {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+}
+
+.scroll-bar {
+    width: 1.5px;
+    height: 44px;
+    background: linear-gradient(to bottom, #38bdf8, transparent);
+    border-radius: 2px;
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scaleY(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleY(1.15);
+    }
+}
+
+
+
+/* Contact body */
+.contact-body {
+    background: var(--white);
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: start;
+}
+
+/* Contact info */
+.contact-info h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.contact-info__sub {
+    color: var(--mid-grey);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 1.3rem;
+    border-radius: 14px;
+    transition: transform 0.25s var(--ease-out), box-shadow 0.25s;
+}
+
+.contact-detail-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+}
+
+.cdi-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: var(--accent-mist);
+    border: 1px solid var(--accent-glow);
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.cdi-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mid-grey);
+    margin-bottom: 0.15rem;
+}
+
+.cdi-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--charcoal);
+}
+
+.contact-social {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.social-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--mid-grey);
+    transition: color 0.28s var(--premium-ease, cubic-bezier(0.23, 1, 0.32, 1)),
+        background var(--smooth-transition, 0.5s cubic-bezier(0.23, 1, 0.32, 1)),
+        transform var(--smooth-transition, 0.5s cubic-bezier(0.23, 1, 0.32, 1));
+    will-change: transform;
+}
+
+.social-pill:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* ── FORM ── */
+.contact-form {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-header {
+    margin-bottom: 0.5rem;
+}
+
+.form-header h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.form-header p {
+    font-size: 0.875rem;
+    color: var(--mid-grey);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--dark-grey);
+    letter-spacing: 0.02em;
+}
+
+.optional {
+    font-weight: 400;
+    color: var(--light-grey);
+    font-size: 0.75rem;
+}
+
+/* ── NEUMORPHIC INPUTS (inset) ── */
+.neo-input-wrapper {
+    position: relative;
+}
+
+.neo-input {
+    width: 100%;
+    padding: 0.9rem 1.1rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    background: var(--neo-bg);
+    border: 1.5px solid transparent;
+    border-radius: 12px;
+    outline: none;
+    box-shadow: var(--neo-shadow-in);
+    transition: box-shadow 0.3s, border-color 0.3s;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.neo-input::placeholder {
+    color: var(--light-grey);
+    font-weight: 400;
+}
+
+.neo-input:focus {
+    box-shadow: var(--neo-focus);
+    border-color: rgba(99, 102, 241, 0.25);
+}
+
+.neo-input:hover:not(:focus) {
+    box-shadow: inset 3px 3px 8px rgba(163, 177, 198, 0.35), inset -3px -3px 8px rgba(255, 255, 255, 0.9);
+}
+
+/* Textarea */
+.neo-textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.7;
+}
+
+/* Select */
+.neo-select-wrapper {
+    position: relative;
+}
+
+.neo-select {
+    cursor: none;
+    -webkit-appearance: none;
+    appearance: none;
+    padding-right: 2.5rem;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--mid-grey);
+}
+
+/* Focus line decoration */
+.input-focus-line {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+    right: 12px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s var(--ease-out);
+}
+
+.neo-input:focus~.input-focus-line {
+    transform: scaleX(1);
+}
+
+/* Form errors */
+.form-error {
+    font-size: 0.75rem;
+    color: #EF4444;
+    min-height: 1em;
+}
+
+/* Submit */
+.form-submit {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+}
+
+/* Success */
+.form-success {
+    display: none;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 14px;
+    font-size: 0.9rem;
+    color: #16A34A;
+    font-weight: 600;
+}
+
+.form-success.show {
+    display: flex;
+}
+
+.form-success span {
+    font-size: 1.5rem;
+}
+
+/* ── FAQ ── */
+.faq-section {
+    background: var(--off-white);
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 720px;
+    margin-inline: auto;
+}
+
+.faq-item {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 1.75rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    text-align: left;
+    cursor: none;
+    background: transparent;
+    transition: color 0.2s;
+    gap: 1rem;
+}
+
+.faq-question:hover {
+    color: var(--accent);
+}
+
+.faq-arrow {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--mid-grey);
+    flex-shrink: 0;
+    transition: transform 0.3s var(--ease-out), color 0.2s;
+    line-height: 1;
+}
+
+.faq-question[aria-expanded="true"] .faq-arrow {
+    transform: rotate(45deg);
+    color: var(--accent);
+}
+
+.faq-answer {
+    padding: 0 1.75rem 1.4rem;
+}
+
+.faq-answer p {
+    font-size: 0.9rem;
+    color: var(--mid-grey);
+    line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hero: stack vertically on tablet */
+    .hero-split-layout {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding-top: 120px;
+        gap: 2.5rem;
+        min-height: 0;
+        padding-bottom: 80px;
+    }
+
+    .hero-content-left {
+        max-width: 100%;
+    }
+
+    .eyebrow-wrap {
+        justify-content: center;
+    }
+
+    .hero-badges-row {
+        justify-content: center;
+    }
+
+    .spatial-orb-wrap {
+        width: 300px;
+        height: 300px;
+    }
+
+    .main-glass-orb {
+        width: 160px;
+        height: 160px;
+    }
+
+    .orb-ring-outer {
+        width: 280px;
+        height: 280px;
+    }
+
+    .orb-ring-mid {
+        width: 210px;
+        height: 210px;
+    }
+
+    .hero-scroll-cue {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .eyebrow-wrap {
+        margin-top: 10px;
+    }
+
+    .hero-main-title {
+        font-size: clamp(2.6rem, 11vw, 3.5rem);
+    }
+
+    .text-dark {
+        transform: translateY(10px);
+    }
+
+    .hero-badges-row {
+        gap: 8px;
+    }
+
+    .badge-pill {
+        font-size: 0.76rem;
+        padding: 7px 15px;
+    }
+
+    .hero-visual-right {
+        display: none;
+        /* hide orb on very small screens for clarity */
+    }
+}

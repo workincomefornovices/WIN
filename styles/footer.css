@@ -1,0 +1,524 @@
+/* ═══════════════════════════════════════════════════════════════
+   WIN — REDESIGNED FOOTER
+   Clean · Minimal · Professional · Agency-grade
+   White theme · 4-column desktop · Full responsive
+   ═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap');
+
+/* ──────────────────────────────────────────────────────────────
+   KEYFRAMES
+   ────────────────────────────────────────────────────────────── */
+
+/* Cityscape layers — LEFT to RIGHT direction (translateX negative→0 loop) */
+@keyframes city-bg {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes city-mid {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes city-fg {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* CTA shimmer */
+@keyframes mf-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   MASTER FOOTER BASE
+   ────────────────────────────────────────────────────────────── */
+.masterpiece-footer {
+  all: unset;
+  display: block;
+  position: relative;
+  background: #ffffff;
+  color: #1a1a2e;
+  font-family: 'Inter', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  border-top: 1px solid #e8eaf0;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   CITYSCAPE ANIMATION — FIXED & COMPACT
+   3 layered parallax tracks, bottom-anchored, 80–120px max height
+   ────────────────────────────────────────────────────────────── */
+.cityscape-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 110px;
+  /* Strict max — no overflow */
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Each layer is an independent scrolling track */
+.city-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: max-content;
+  align-items: flex-end;
+  will-change: transform;
+}
+
+/* Background layer — slowest, lightest */
+.city-layer--bg {
+  animation: city-bg 60s linear infinite;
+  opacity: 0.20;
+}
+
+/* Mid layer — medium speed */
+.city-layer--mid {
+  animation: city-mid 35s linear infinite;
+  opacity: 0.28;
+}
+
+/* Foreground layer — fastest, slightly darker */
+.city-layer--fg {
+  animation: city-fg 20s linear infinite;
+  opacity: 0.36;
+}
+
+/* Individual SVG panels inside each layer */
+.city-panel {
+  display: block;
+  flex-shrink: 0;
+  width: auto;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   CONTENT WRAPPER
+   ────────────────────────────────────────────────────────────── */
+.mf-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   MAIN GRID — 4 columns
+   ────────────────────────────────────────────────────────────── */
+.mf-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.3fr;
+  gap: 2.5rem 3rem;
+  padding: 3rem 0 2rem;
+  border-bottom: 1px solid #e8eaf0;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   BRAND COLUMN
+   ────────────────────────────────────────────────────────────── */
+.mf-col--brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Text logo fallback */
+.mf-logo {
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 0.85rem;
+}
+
+/* 3D logo mount variant */
+.mf-logo--3d {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  margin-bottom: 0.85rem;
+  margin-left: -104px;
+}
+
+/* Logo mount canvas holder */
+.mf-logo-mount {
+  display: block;
+  width: 140px;
+  height: 56px;
+  position: relative;
+  overflow: visible;
+}
+
+.mf-logo-mount canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Colour tokens for fallback text logo */
+.mf-logo__w {
+  color: #007AFF;
+}
+
+.mf-logo__in {
+  color: #1a1a2e;
+}
+
+/* Tagline */
+.mf-brand__tagline {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: #5a6070;
+  margin: 0 0 1.25rem;
+  max-width: 26ch;
+}
+
+/* Social icons row */
+.mf-social-row {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.mf-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #f0f2f8;
+  border-radius: 10px;
+  color: #5a6070;
+  text-decoration: none;
+  transition: background 0.22s ease, color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+  flex-shrink: 0;
+}
+
+.mf-social:hover {
+  background: #007AFF;
+  color: #ffffff;
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 122, 255, 0.28);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   NAV COLUMNS (Navigation & Services)
+   ────────────────────────────────────────────────────────────── */
+.mf-col__heading {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1a1a2e;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8eaf0;
+}
+
+.mf-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mf-nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #5a6070;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.2s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.mf-nav-link::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  background: #007AFF;
+  border-radius: 50%;
+  transform: translate(0, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+.mf-nav-link:hover {
+  color: #007AFF;
+  transform: translateX(8px);
+}
+
+.mf-nav-link:hover::before {
+  transform: translate(0, -50%) scale(1);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   CONTACT COLUMN
+   ────────────────────────────────────────────────────────────── */
+.mf-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-style: normal;
+  margin-bottom: 1.25rem;
+}
+
+.mf-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.86rem;
+  color: #5a6070;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  line-height: 1.45;
+}
+
+.mf-contact-item:hover {
+  color: #007AFF;
+}
+
+.mf-contact-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: 0.7;
+}
+
+/* CTA Button */
+.mf-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.68rem 1.45rem;
+  background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+  color: #ffffff;
+  font-size: 0.83rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 100px;
+  text-decoration: none;
+  background-size: 200% auto;
+  transition: background-position 0.4s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 122, 255, 0.22);
+  white-space: nowrap;
+}
+
+.mf-cta-btn:hover {
+  background-position: right center;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 122, 255, 0.35);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   BOTTOM BAR
+   ────────────────────────────────────────────────────────────── */
+.mf-bottom-bar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* Align text higher so it sits in the 'sky' of the cityscape */
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1.5rem 0 1rem;
+  min-height: 110px;
+  /* perfectly contains the 110px cityscape */
+  box-sizing: border-box;
+}
+
+.mf-copyright {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 0;
+  font-weight: 500;
+}
+
+.mf-legal {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 0;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.mf-legal-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.mf-legal-link:hover {
+  color: #007AFF;
+}
+
+/* Divider accent between legal links */
+.mf-legal span[aria-hidden] {
+  color: #c5c8d0;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   WIDE DESKTOP  ≥ 1600px
+   ────────────────────────────────────────────────────────────── */
+@media (min-width: 1600px) {
+  .mf-logo--3d {
+    margin-left: -132px;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   TABLET  ≤ 1024px
+   ────────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .mf-content {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .mf-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2.5rem 0 1.5rem;
+  }
+
+  /* Brand spans full width on top */
+  .mf-col--brand {
+    grid-column: 1 / -1;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .mf-logo--3d {
+    margin-left: -22px;
+  }
+
+  .mf-bottom-bar {
+    justify-content: center;
+    gap: 0.4rem;
+    padding-bottom: 1.5rem;
+    min-height: 110px;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   MOBILE  ≤ 720px
+   ────────────────────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .mf-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .mf-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 2rem 0 1.25rem;
+  }
+
+  .mf-logo--3d {
+    margin-left: -22px;
+    /* Correctly offset canvas internal padding */
+  }
+
+  .mf-col--brand {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .mf-brand__tagline {
+    max-width: 100%;
+  }
+
+  .mf-bottom-bar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 1.5rem 0 1.5rem;
+    min-height: 80px;
+    /* matches mobile cityscape height */
+  }
+
+  .mf-legal {
+    justify-content: center;
+  }
+
+  /* Reduce cityscape to 80px on mobile */
+  .cityscape-container {
+    height: 80px;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   SMALL MOBILE  ≤ 480px
+   ────────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .mf-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .mf-logo--3d {
+    margin-left: -22px;
+    /* Ensure offset is kept on small mobile */
+  }
+
+  /* Full-width CTA on small screens */
+  .mf-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mf-col__heading {
+    font-size: 0.68rem;
+  }
+
+  .mf-bottom-bar {
+    padding-bottom: 1.5rem;
+  }
+
+  .cityscape-container {
+    height: 76px;
+  }
+}
