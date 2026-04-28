@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIN Skill Accelerator - Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="accelerator-container">
+        
+        <!-- Left Content Section -->
+        <section class="info-section">
+            <div class="badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                LIMITED SEATS
+            </div>
+            
+            <h1 class="main-title">WIN <span class="cursive-text">Skill</span> Accelerator</h1>
+            
+            <p class="subtitle">
+                Master high-income digital skills with hands-on mentorship, real-world projects, and a community of driven learners. Transform your career trajectory in weeks, not years.
+            </p>
+
+            <div class="pricing-card">
+                <div class="pricing-header">PRICING BREAKDOWN</div>
+                
+                <div class="price-row">
+                    <span class="price-label">Full Price</span>
+                    <span class="price-value black-price" id="displayFullPrice">₹1,499</span>
+                </div>
+                
+                <hr class="divider">
+                
+                <div class="price-row advance-row">
+                    <div class="price-details">
+                        <span class="price-label">Advance Booking</span>
+                        <span class="price-subtext">Reserve your spot</span>
+                    </div>
+                    <span class="price-value green-price">₹449</span>
+                </div>
+            </div>
+
+            <ul class="features-list">
+                <li>
+                    <span class="icon blue-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </span>
+                    Secure Payment via Razorpay
+                </li>
+                <li>
+                    <span class="icon blue-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </span>
+                    Limited Seats Available — Enroll Now
+                </li>
+                <li>
+                    <span class="icon yellow-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    </span>
+                    Advance booking is non-refundable
+                </li>
+                <li>
+                    <span class="icon blue-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </span>
+                    Certificate of Completion Included
+                </li>
+            </ul>
+        </section>
+
+        <!-- Right Form Section -->
+        <section class="form-section">
+            <div class="form-card">
+                <h2 class="form-title">Register Now</h2>
+                <p class="form-subtitle">Fill in your details to secure your seat.</p>
+
+                <form id="registrationForm" novalidate>
+                    <div class="input-group">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" placeholder="10-digit mobile number" required pattern="[0-9]{10}">
+                    </div>
+
+                    <div class="row">
+                        <div class="input-group">
+                            <label for="city">City <span class="required">*</span></label>
+                            <input type="text" id="city" placeholder="Your city" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="state">State <span class="required">*</span></label>
+                            <input type="text" id="state" placeholder="Your state" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="coupon">Coupon Code <span class="optional">(optional)</span></label>
+                        <div class="coupon-wrapper">
+                            <input type="text" id="coupon" placeholder="Enter coupon code">
+                            <button type="button" class="btn-apply" id="applyCouponBtn">Apply</button>
+                        </div>
+                    </div>
+
+                    <div class="order-summary">
+                        <div class="summary-header">ORDER SUMMARY</div>
+                        <div class="summary-row">
+                            <span class="summary-label">Program</span>
+                            <span class="summary-value black-value">WIN Skill Accelerator</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Coupon</span>
+                            <span class="summary-value black-value" id="summaryCouponValue">None</span>
+                        </div>
+                        <div class="summary-row" id="summaryTotalRow" style="display: none;">
+                            <span class="summary-label">Total (Full Payment)</span>
+                            <span class="summary-value black-value" id="summaryTotalValue">₹1,499</span>
+                        </div>
+                    </div>
+
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <label for="agreeTerms" class="terms-label">
+                            I have read and agree to the <a href="../privacy-policy/" target="_blank">Privacy Policy</a> and <a href="../terms-and-conditions/" target="_blank">Terms & Conditions</a>. I understand that bookings are non-refundable.
+                        </label>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button type="submit" class="btn-primary" id="bookSeatBtn">
+                            <span class="btn-main-text">Book Your Seat</span>
+                            <span class="btn-price">₹449 Advance</span>
+                            <span class="btn-subtext">Reserve now, pay rest later</span>
+                        </button>
+                        
+                        <button type="button" class="btn-secondary" id="fullAccessBtn">
+                            <span class="btn-main-text">Get Full Access</span>
+                            <span class="btn-subtext" id="btnFullPriceSubtext">₹1,499 Full Payment</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
