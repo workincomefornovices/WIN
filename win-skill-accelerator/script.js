@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const summaryTotalValue = document.getElementById('summaryTotalValue');
     const btnFullPriceSubtext = document.getElementById('btnFullPriceSubtext');
     const agreeTerms = document.getElementById('agreeTerms');
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzUw9pewzIkg46RFErBTSvKkp_9v3mXuiViLNTEhlCar1iB7RSOGo6WhAcAn-F7SWxQoA/exec';
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzEGutBXhNxewgNQism8ijhKn3hYPMF1kCaVZTKTyaBYdktyx5xKfMZGu1RlpSf8jq5-w/exec';
 
     async function processPayment(amount, buttonElement) {
         // Show loading state
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Payment Error:', error);
             // Display the exact error message in the toast to help us debug
-            showToast('Error: ' + error.message, 'error');
+            showToast('Error connecting to payment gateway. Please try again later.', 'error');
             
             // Revert button state on error
             buttonElement.disabled = false;
